@@ -124,3 +124,94 @@ body {
   from { transform: scale(1.05) translate3d(0, 0, 0); }
   to   { transform: scale(1.15) translate3d(-1.5%, -1%, 0); }
 }
+
+/* ── Mobile Nav Morphing Hamburger & Drawer ── */
+#bar-top { transform-origin: 12px 6px; }
+#bar-bot { transform-origin: 12px 18px; }
+
+.menu-open #bar-top {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-open #bar-mid {
+  opacity: 0;
+}
+.menu-open #bar-bot {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+/* ── Journal Editorial Layout ── */
+.blog-dropcap::first-letter {
+  font-family: "Fraunces", Georgia, serif;
+  float: left;
+  font-size: 4.8rem;
+  line-height: 0.8;
+  margin-right: 0.15em;
+  margin-top: 0.15em;
+  font-weight: 300;
+  color: var(--spice);
+}
+
+.blog-blockquote {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--moss-deep);
+  border-left: 2px solid var(--brass);
+  padding-left: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+/* ── Custom SVG Map Styling ── */
+.map-marker {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.map-marker:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+.map-label {
+  pointer-events: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  fill: var(--ink);
+  font-size: 10px;
+}
+
+/* ── Accordion ── */
+.accordion-header {
+  cursor: pointer;
+  user-select: none;
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.accordion-open .accordion-content {
+  max-height: 500px;
+}
+.accordion-icon {
+  transition: transform 0.4s ease;
+}
+.accordion-open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* ── Live Infinite Marquee Track ── */
+.marquee-track {
+  animation: marquee-scroll 32s linear infinite;
+}
+@keyframes marquee-scroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+

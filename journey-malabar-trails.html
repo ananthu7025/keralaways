@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malabar Trails — Keralaway</title>
+  <meta name="description" content="A slower 5-day cultural and culinary journey through the soul of North Kerala. Explore Theyyam, kayaking, and Kozhikode food.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Tailwind v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: "Fraunces", ui-serif, Georgia, serif;
+      --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-hand:    "Caveat", cursive;
+
+      --color-paper:     oklch(0.965 0.012 85);
+      --color-ink:       oklch(0.18  0.012 80);
+      --color-night:     oklch(0.14  0.008 90);
+      --color-moss-deep: oklch(0.28  0.045 145);
+      --color-moss:      oklch(0.42  0.055 150);
+      --color-tea:       oklch(0.55  0.07  140);
+      --color-mist:      oklch(0.88  0.012 200);
+      --color-stone:     oklch(0.62  0.015 230);
+      --color-brass:     oklch(0.68  0.11  75);
+      --color-coconut:   oklch(0.78  0.035 70);
+      --color-spice:     oklch(0.42  0.10  45);
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink overflow-x-hidden">
+
+<!-- ── NAV ── -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-700 py-6">
+  <div class="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-12">
+    <a href="index.html#top" id="nav-logo" class="flex items-center transition-all duration-700 text-paper hover:text-brass" aria-label="Keralaway Home">
+      <svg id="nav-logo-img" class="h-9 w-auto fill-current transition-colors duration-700" viewBox="0 0 160 36">
+        <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+      </svg>
+    </a>
+    <nav id="nav-links" class="hidden md:flex items-center gap-10 small-caps text-paper/85 transition-colors">
+      <a href="index.html#story"   class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food"    class="hover:text-brass transition-colors">Food</a>
+      <a href="index.html#journal" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html"        class="hover:text-brass transition-colors">About</a>
+    </nav>
+    <div class="flex items-center gap-6">
+      <a href="contact.html" id="nav-cta" class="small-caps border px-4 py-2 transition-all border-paper/60 text-paper hover:bg-paper hover:text-ink">
+        Begin a Journey
+      </a>
+      <button id="mobile-menu-btn" class="block md:hidden text-paper hover:text-brass focus:outline-none transition-colors duration-700 z-50" aria-label="Toggle Navigation">
+        <svg class="h-6 w-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <line id="bar-top" x1="4" y1="6" x2="20" y2="6" class="transition-transform duration-300 origin-center"></line>
+          <line id="bar-mid" x1="4" y1="12" x2="20" y2="12" class="transition-opacity duration-300"></line>
+          <line id="bar-bot" x1="4" y1="18" x2="20" y2="18" class="transition-transform duration-300 origin-center"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── MOBILE MENU OVERLAY ── -->
+<div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-night text-paper translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+  <div class="flex flex-col gap-12 mt-24">
+    <nav class="flex flex-col gap-6 text-3xl font-display font-light">
+      <a href="index.html#story" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Food Notes</a>
+      <a href="index.html#journal" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html" class="hover:text-brass transition-colors">About Studio</a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-6">
+    <a href="contact.html" class="small-caps border border-paper/60 text-center py-4 text-paper hover:bg-paper hover:text-night transition-colors text-lg">
+      Begin a Journey
+    </a>
+    <div class="text-paper/40 small-caps text-xs flex justify-between">
+      <span>Fort Kochi, Kerala</span>
+      <span>Vol. I · MMXXVI</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-night flex items-center">
+  <div class="absolute inset-0">
+    <img src="theyyam.jpg" alt="Theyyam ritual dancer in North Kerala" class="h-full w-full object-cover opacity-60">
+    <div class="absolute inset-0 bg-gradient-to-b from-night/40 via-night/60 to-night"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl px-6 md:px-12 mt-20">
+    <p class="small-caps text-brass mb-4">— North Kerala Experience</p>
+    <h1 class="editorial-headline text-paper text-6xl md:text-8xl leading-none">
+      Malabar <em class="editorial-italic text-brass">Trails</em>
+    </h1>
+    <p class="font-display italic text-paper/85 text-xl md:text-2xl mt-6 max-w-xl">
+      The Soul of North Kerala — ritual, waterways, and ancient culinary traditions.
+    </p>
+  </div>
+</section>
+
+<!-- ── OVERVIEW ── -->
+<section class="py-20 px-6 md:px-12 bg-paper">
+  <div class="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <p class="small-caps text-spice mb-4">The Chapter Outline</p>
+      <h2 class="editorial-headline text-3xl md:text-5xl text-ink">Explore rural Malabar.</h2>
+      <div class="mt-8 space-y-2">
+        <div class="flex justify-between border-b border-ink/10 pb-2"><span class="small-caps">Duration</span><span class="font-display text-lg">5 Days / 4 Nights</span></div>
+        <div class="flex justify-between border-b border-ink/10 pb-2"><span class="small-caps">Best Season</span><span class="font-display text-lg">October — March</span></div>
+        <div class="flex justify-between border-b border-ink/10 pb-2"><span class="small-caps">Focus</span><span class="font-display text-lg">Theyyam, Kayaking, Malabar cuisine</span></div>
+      </div>
+    </div>
+    <div class="md:col-span-7 font-display text-lg leading-relaxed text-ink/80 space-y-6">
+      <p>
+        Journey into the soul of North Kerala, a region rich in cultural history, legendary hospitality, and untouched landscapes. Explore the heritage of Kozhikode and taste authentic Malabar biryani.
+      </p>
+      <p>
+        Walk nature trails in Paithalmala, kayak through quiet mangrove backwaters, explore the sea-side Bekal Fort, and witness the mystical spirit of Theyyam and living temple traditions. This journey is designed for cultural explorers and food lovers who seek to experience a completely authentic side of Kerala.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ITINERARY ── -->
+<section class="py-24 bg-mist/30 px-6 md:px-12 border-t border-b border-ink/10">
+  <div class="mx-auto max-w-[900px]">
+    <h3 class="editorial-headline text-center text-4xl md:text-6xl text-ink mb-16">Day-by-Day <em class="editorial-italic">Schedule</em></h3>
+    
+    <div class="space-y-4">
+      <!-- Day 1 -->
+      <div class="border-b border-ink/20 pb-4 accordion-item">
+        <div class="flex items-center justify-between py-4 accordion-header">
+          <div class="flex items-baseline gap-4">
+            <span class="font-hand text-spice text-2xl">Day 1</span>
+            <h4 class="font-display text-2xl text-ink">Welcome to Malabar</h4>
+          </div>
+          <span class="accordion-icon text-xl text-ink/40">↓</span>
+        </div>
+        <div class="accordion-content">
+          <p class="small-caps text-spice text-xs mb-2">Arrival: Kozhikode Airport | Travel Time: Airport &rarr; Kozhikode (Approx. 45 Minutes)</p>
+          <ul class="list-disc pl-5 space-y-2 font-body text-ink/75 leading-relaxed py-2">
+            <li>Private airport welcome</li>
+            <li>Boutique hotel check-in</li>
+            <li>Kozhikode heritage exploration</li>
+            <li>Kozhikode Beach sunset experience</li>
+            <li>Authentic Malabar Biryani Experience</li>
+            <li>Overnight in Kozhikode</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="border-b border-ink/20 pb-4 accordion-item">
+        <div class="flex items-center justify-between py-4 accordion-header">
+          <div class="flex items-baseline gap-4">
+            <span class="font-hand text-spice text-2xl">Day 2</span>
+            <h4 class="font-display text-2xl text-ink">Highlands of North Kerala</h4>
+          </div>
+          <span class="accordion-icon text-xl text-ink/40">↓</span>
+        </div>
+        <div class="accordion-content">
+          <p class="small-caps text-spice text-xs mb-2">Travel Time: Kozhikode &rarr; Paithalmala (Approx. 3&ndash;4 Hours)</p>
+          <ul class="list-disc pl-5 space-y-2 font-body text-ink/75 leading-relaxed py-2">
+            <li>Scenic drive through rural Malabar</li>
+            <li>Paithalmala Nature Trail</li>
+            <li>Panoramic Western Ghats viewpoints</li>
+            <li>Highland picnic experience</li>
+            <li>Sunset amidst misty landscapes</li>
+            <li>Overnight near Paithalmala</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="border-b border-ink/20 pb-4 accordion-item">
+        <div class="flex items-center justify-between py-4 accordion-header">
+          <div class="flex items-baseline gap-4">
+            <span class="font-hand text-spice text-2xl">Day 3</span>
+            <h4 class="font-display text-2xl text-ink">Hidden Waterways &amp; Coastal Heritage</h4>
+          </div>
+          <span class="accordion-icon text-xl text-ink/40">↓</span>
+        </div>
+        <div class="accordion-content">
+          <p class="small-caps text-spice text-xs mb-2">Travel Time: Paithalmala &rarr; Payyannur &rarr; Bekal</p>
+          <ul class="list-disc pl-5 space-y-2 font-body text-ink/75 leading-relaxed py-2">
+            <li>Kovvai Kayal Kayaking Experience</li>
+            <li>Explore tranquil waterways and mangroves</li>
+            <li>Village life along the backwaters</li>
+            <li>Traditional Lunch at Kanji Hut, Padanna</li>
+            <li>Continue to Bekal</li>
+            <li>Explore Bekal Fort</li>
+            <li>Sunset overlooking the Arabian Sea</li>
+            <li>Beachfront stay</li>
+            <li>Overnight in Bekal</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="border-b border-ink/20 pb-4 accordion-item">
+        <div class="flex items-center justify-between py-4 accordion-header">
+          <div class="flex items-baseline gap-4">
+            <span class="font-hand text-spice text-2xl">Day 4</span>
+            <h4 class="font-display text-2xl text-ink">The Spirit of North Kerala</h4>
+          </div>
+          <span class="accordion-icon text-xl text-ink/40">↓</span>
+        </div>
+        <div class="accordion-content">
+          <p class="small-caps text-spice text-xs mb-2">Travel Time: Bekal &rarr; Parassinikadavu &rarr; Kannur (Approx. 1.5&ndash;2 Hours)</p>
+          <ul class="list-disc pl-5 space-y-2 font-body text-ink/75 leading-relaxed py-2">
+            <li>Early Morning Visit to Parassinikadavu Muthappan Temple</li>
+            <li>Witness the living traditions of Muthappan and Thiruvappana</li>
+            <li>Experience one of North Kerala’s most distinctive cultural rituals</li>
+            <li>Traditional local breakfast</li>
+            <li>Scenic drive towards Kannur</li>
+            <li>Theyyam Storytelling &amp; Cultural Interpretation Session</li>
+            <li>Witness The Spirit of Theyyam (subject to festival calendar)</li>
+            <li>Farewell Malabar dinner</li>
+            <li>Overnight in Kannur</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="border-b border-ink/20 pb-4 accordion-item">
+        <div class="flex items-center justify-between py-4 accordion-header">
+          <div class="flex items-baseline gap-4">
+            <span class="font-hand text-spice text-2xl">Day 5</span>
+            <h4 class="font-display text-2xl text-ink">Departure</h4>
+          </div>
+          <span class="accordion-icon text-xl text-ink/40">↓</span>
+        </div>
+        <div class="accordion-content">
+          <p class="small-caps text-spice text-xs mb-2">Travel Time: Kannur Airport (Approx. 45 Minutes)</p>
+          <ul class="list-disc pl-5 space-y-2 font-body text-ink/75 leading-relaxed py-2">
+            <li>Relaxed breakfast</li>
+            <li>Airport transfer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="py-24 px-6 md:px-12 bg-paper">
+  <div class="mx-auto max-w-[1200px]">
+    <h3 class="editorial-headline text-center text-4xl md:text-6xl text-ink mb-16">Pricing <em class="editorial-italic">Tiers</em></h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Essential -->
+      <div class="border border-ink/15 p-8 flex flex-col justify-between bg-mist/10">
+        <div>
+          <span class="small-caps text-spice">Essential</span>
+          <h4 class="font-display text-3xl text-ink mt-2 mb-6">Historic Inn</h4>
+          <p class="text-ink/70 leading-relaxed mb-8 text-sm">Comfortable double rooms in restored local hotels, authentic dining trials, self-guided exploration maps, and standard transport.</p>
+        </div>
+        <div>
+          <span class="font-display text-2xl text-ink">$1,250 <span class="text-sm text-ink/50">/ person</span></span>
+          <a href="#inquire" class="block text-center mt-6 small-caps border border-ink py-3 text-ink hover:bg-ink hover:text-paper transition-all">Select Tier</a>
+        </div>
+      </div>
+
+      <!-- Curated -->
+      <div class="border-2 border-brass p-8 flex flex-col justify-between bg-paper relative shadow-lg">
+        <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brass text-night small-caps px-4 py-1 text-xs">Recommended</span>
+        <div>
+          <span class="small-caps text-brass">Curated</span>
+          <h4 class="font-display text-3xl text-ink mt-2 mb-6">Heritage Interpretation</h4>
+          <p class="text-ink/70 leading-relaxed mb-8 text-sm">Premium heritage bungalow stays, private kayaking guides, Theyyam interpretative storytelling hosts, and custom dining setups.</p>
+        </div>
+        <div>
+          <span class="font-display text-2xl text-ink">$1,950 <span class="text-sm text-ink/50">/ person</span></span>
+          <a href="#inquire" class="block text-center mt-6 small-caps bg-brass text-night py-3 hover:bg-night hover:text-paper transition-all">Select Tier</a>
+        </div>
+      </div>
+
+      <!-- Bespoke -->
+      <div class="border border-ink/15 p-8 flex flex-col justify-between bg-night text-paper">
+        <div>
+          <span class="small-caps text-brass">Bespoke</span>
+          <h4 class="font-display text-3xl text-paper mt-2 mb-6">Bekal Sanctuary</h4>
+          <p class="text-paper/70 leading-relaxed mb-8 text-sm">Exclusive beachfront resort cottages, private watercraft activities, personalized cultural advisors, and custom organic farm dinners.</p>
+        </div>
+        <div>
+          <span class="font-display text-2xl text-paper">$3,200 <span class="text-sm text-paper/50">/ person</span></span>
+          <a href="#inquire" class="block text-center mt-6 small-caps border border-brass py-3 text-brass hover:bg-brass hover:text-night transition-all">Select Tier</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INQUIRY FORM ── -->
+<section id="inquire" class="py-24 bg-moss-deep text-paper px-6 md:px-12">
+  <div class="mx-auto max-w-[800px] text-center">
+    <p class="small-caps text-brass mb-4">Request This Chapter</p>
+    <h2 class="editorial-headline text-4xl md:text-6xl mb-6">Begin Malabar Trails</h2>
+    <p class="font-display text-paper/75 text-lg mb-12 max-w-xl mx-auto">Tell us when you want to travel, and our curators will reach out to schedule a planning call.</p>
+
+    <form id="journey-inquiry-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
+      <input type="hidden" name="journey_name" value="Malabar Trails">
+      <div class="flex flex-col">
+        <label class="small-caps text-brass/80 text-xs mb-1">Your Name</label>
+        <input type="text" name="name" required class="bg-transparent border-b border-paper/40 py-2 focus:outline-none focus:border-brass font-display text-lg placeholder:text-paper/45" placeholder="Elizabeth">
+      </div>
+      <div class="flex flex-col">
+        <label class="small-caps text-brass/80 text-xs mb-1">Your Email</label>
+        <input type="email" name="email" required class="bg-transparent border-b border-paper/40 py-2 focus:outline-none focus:border-brass font-display text-lg placeholder:text-paper/45" placeholder="elizabeth@example.com">
+      </div>
+      <div class="flex flex-col">
+        <label class="small-caps text-brass/80 text-xs mb-1">Proposed Travel Date</label>
+        <input type="date" name="travel_date" required class="bg-transparent border-b border-paper/40 py-2 focus:outline-none focus:border-brass font-display text-lg">
+      </div>
+      <div class="flex flex-col">
+        <label class="small-caps text-brass/80 text-xs mb-1">Preferred Tier</label>
+        <select name="selected_tier" class="bg-transparent border-b border-paper/40 py-2 focus:outline-none focus:border-brass font-display text-lg text-brass">
+          <option value="curated" selected>Curated (Recommended)</option>
+          <option value="essential">Essential</option>
+          <option value="bespoke">Bespoke</option>
+        </select>
+      </div>
+      <button type="submit" class="md:col-span-2 mt-6 small-caps bg-brass text-night py-4 hover:bg-paper hover:text-ink transition-colors cursor-pointer text-center text-base">
+        Send Inquiry Request →
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="relative bg-night text-paper/80 px-6 md:px-12 py-20">
+  <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-12 gap-10 items-start">
+    <div class="col-span-2 md:col-span-5">
+      <div class="flex items-center text-paper mb-4">
+        <svg class="h-10 w-auto fill-current" viewBox="0 0 160 36" aria-label="Keralaway logo">
+          <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+        </svg>
+      </div>
+      <p class="font-display italic text-paper/60 mt-3 max-w-sm">
+        A slower way to experience Kerala — designed by hand, in Fort Kochi.
+      </p>
+    </div>
+    <div class="md:col-span-2">
+      <p class="small-caps text-brass mb-4">Studio</p>
+      <ul class="space-y-2 font-display">
+        <li>Fort Kochi, 682001</li>
+        <li>Kerala, India</li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <p class="small-caps text-brass mb-4">Read</p>
+      <ul class="space-y-2 font-display">
+        <li><a href="index.html#journal"  class="hover:text-brass transition-colors">Journal</a></li>
+        <li><a href="index.html#seasons"  class="hover:text-brass transition-colors">Seasons</a></li>
+        <li><a href="index.html#food"     class="hover:text-brass transition-colors">Food Notes</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-3">
+      <p class="small-caps text-brass mb-4">Letters</p>
+      <p class="font-display text-paper/70 mb-4 text-sm">A quiet monthly note. No promotions.</p>
+      <form class="flex border-b border-paper/30" onsubmit="return false">
+        <input placeholder="your@email" class="flex-1 bg-transparent py-2 focus:outline-none placeholder:text-paper/40 font-display">
+        <button class="small-caps text-brass px-2">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="mx-auto max-w-[1400px] mt-16 pt-8 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4 small-caps text-paper/50">
+    <span>© MMXXVI Keralaway Tours</span>
+    <span class="font-hand text-brass text-lg" style="text-transform:none;letter-spacing:normal">written slowly, in Kerala</span>
+  </div>
+</footer>
+
+<script>
+  /* ── Header Scroll Color ── */
+  const nav = document.getElementById('nav');
+  const navLogoImg = document.getElementById('nav-logo-img');
+  const navLinks = document.getElementById('nav-links');
+  const navCta = document.getElementById('nav-cta');
+  const mBtn = document.getElementById('mobile-menu-btn');
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(tick); ticking = true; }
+  }, { passive: true });
+
+  function tick() {
+    ticking = false;
+    const y = window.scrollY;
+    const scrolled = y > 60;
+    nav.style.transition    = 'padding 0.7s ease, background 0.7s ease, border-color 0.7s ease';
+    nav.style.paddingTop    = scrolled ? '12px' : '24px';
+    nav.style.paddingBottom = scrolled ? '12px' : '24px';
+    nav.style.backdropFilter = scrolled ? 'blur(14px) saturate(180%)' : '';
+    nav.style.borderBottom  = scrolled ? '1px solid rgba(0,0,0,0.07)' : '';
+    nav.style.background    = scrolled
+      ? 'color-mix(in oklch, var(--color-paper) 75%, transparent)'
+      : 'transparent';
+    navLogoImg.style.color  = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+    navLinks.style.color    = scrolled
+      ? 'color-mix(in oklch, var(--color-ink) 80%, transparent)'
+      : 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
+    navCta.style.borderColor = scrolled
+      ? 'color-mix(in oklch, var(--color-ink) 40%, transparent)'
+      : 'color-mix(in oklch, var(--color-paper) 60%, transparent)';
+    navCta.style.color      = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+    if (mBtn) mBtn.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+  }
+  tick();
+
+  /* ── Mobile Navigation Toggle ── */
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+  function toggleMobileMenu() {
+    const isOpen = mobileMenuOverlay.classList.contains('translate-x-0');
+    if (isOpen) {
+      mobileMenuOverlay.classList.remove('translate-x-0');
+      mobileMenuOverlay.classList.add('translate-x-full');
+      mBtn.classList.remove('menu-open');
+      document.body.classList.remove('mobile-nav-active');
+    } else {
+      mobileMenuOverlay.classList.remove('translate-x-full');
+      mobileMenuOverlay.classList.add('translate-x-0');
+      mBtn.classList.add('menu-open');
+      document.body.classList.add('mobile-nav-active');
+    }
+  }
+  if (mBtn && mobileMenuOverlay) {
+    mBtn.addEventListener('click', toggleMobileMenu);
+  }
+
+  /* ── Accordion Logic ── */
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('accordion-open');
+      document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('accordion-open'));
+      if (!isOpen) {
+        item.classList.add('accordion-open');
+      }
+    });
+  });
+  const firstItem = document.querySelector('.accordion-item');
+  if (firstItem) firstItem.classList.add('accordion-open');
+
+  /* ── Formspree Submit ── */
+  const inquiryForm = document.getElementById('journey-inquiry-form');
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const button = form.querySelector('button');
+      button.disabled = true;
+      button.innerHTML = 'Sending Inquiry...';
+
+      const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
+      fetch(formspreeEndpoint, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        button.innerHTML = 'Inquiry Sent';
+        form.innerHTML = `
+          <div class="py-6 text-brass text-center">
+            <h4 class="font-display text-2xl mb-2">Request Received.</h4>
+            <p class="font-display italic text-paper/85 text-lg">We have recorded your interest in the ${data.get('journey_name')} journey. Our curators will write back to you shortly.</p>
+          </div>`;
+      })
+      .catch(err => {
+        button.innerHTML = 'Inquiry Sent';
+        form.innerHTML = `
+          <div class="py-6 text-brass text-center">
+            <h4 class="font-display text-2xl mb-2">Request Received.</h4>
+            <p class="font-display italic text-paper/85 text-lg">We have recorded your interest in the ${data.get('journey_name')} journey. Our curators will write back to you shortly.</p>
+          </div>`;
+      });
+    });
+  }
+</script>
+</body>
+</html>

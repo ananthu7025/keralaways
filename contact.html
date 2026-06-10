@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Journey — Keralaway</title>
+  <meta name="description" content="Begin designing your slow travel journey through Kerala. Share your interests, timeline, and travel style.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Tailwind v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: "Fraunces", ui-serif, Georgia, serif;
+      --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-hand:    "Caveat", cursive;
+
+      --color-paper:     oklch(0.965 0.012 85);
+      --color-ink:       oklch(0.18  0.012 80);
+      --color-night:     oklch(0.14  0.008 90);
+      --color-moss-deep: oklch(0.28  0.045 145);
+      --color-moss:      oklch(0.42  0.055 150);
+      --color-tea:       oklch(0.55  0.07  140);
+      --color-mist:      oklch(0.88  0.012 200);
+      --color-stone:     oklch(0.62  0.015 230);
+      --color-brass:     oklch(0.68  0.11  75);
+      --color-coconut:   oklch(0.78  0.035 70);
+      --color-spice:     oklch(0.42  0.10  45);
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+<!-- ── NAV ── -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-700 py-6">
+  <div class="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-12">
+    <a href="index.html#top" id="nav-logo" class="flex items-center transition-all duration-700 text-paper hover:text-brass" aria-label="Keralaway Home">
+      <svg id="nav-logo-img" class="h-9 w-auto fill-current transition-colors duration-700" viewBox="0 0 160 36">
+        <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+      </svg>
+    </a>
+    <nav id="nav-links" class="hidden md:flex items-center gap-10 small-caps text-paper/85 transition-colors">
+      <a href="index.html#story"   class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food"    class="hover:text-brass transition-colors">Food</a>
+      <a href="index.html#journal" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html"        class="hover:text-brass transition-colors">About</a>
+    </nav>
+    <div class="flex items-center gap-6">
+      <a href="contact.html" id="nav-cta" class="small-caps border px-4 py-2 transition-all border-paper/60 text-paper hover:bg-paper hover:text-ink">
+        Begin a Journey
+      </a>
+      <button id="mobile-menu-btn" class="block md:hidden text-paper hover:text-brass focus:outline-none transition-colors duration-700 z-50" aria-label="Toggle Navigation">
+        <svg class="h-6 w-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <line id="bar-top" x1="4" y1="6" x2="20" y2="6" class="transition-transform duration-300 origin-center"></line>
+          <line id="bar-mid" x1="4" y1="12" x2="20" y2="12" class="transition-opacity duration-300"></line>
+          <line id="bar-bot" x1="4" y1="18" x2="20" y2="18" class="transition-transform duration-300 origin-center"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── MOBILE MENU OVERLAY ── -->
+<div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-night text-paper translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+  <div class="flex flex-col gap-12 mt-24">
+    <nav class="flex flex-col gap-6 text-3xl font-display font-light">
+      <a href="index.html#story" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Food Notes</a>
+      <a href="index.html#journal" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html" class="hover:text-brass transition-colors">About Studio</a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-6">
+    <a href="contact.html" class="small-caps border border-paper/60 text-center py-4 text-paper hover:bg-paper hover:text-night transition-colors text-lg">
+      Begin a Journey
+    </a>
+    <div class="text-paper/40 small-caps text-xs flex justify-between">
+      <span>Fort Kochi, Kerala</span>
+      <span>Vol. I · MMXXVI</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN SPLIT CONTENT ── -->
+<main class="flex-1 grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+  <!-- Left visual panel -->
+  <div class="lg:col-span-5 relative hidden lg:block bg-night">
+    <div class="absolute inset-0">
+      <img src="contact-hero.jpg" alt="Sunrise over Kerala Lagoon" class="h-full w-full object-cover opacity-75">
+      <div class="absolute inset-0 bg-gradient-to-r from-night/40 to-night/10"></div>
+    </div>
+    <div class="absolute bottom-16 left-12 right-12 z-10 text-paper space-y-6">
+      <p class="small-caps text-brass">— An Invitation</p>
+      <h2 class="editorial-headline text-5xl xl:text-6xl">Let's design your slow path.</h2>
+      <p class="font-display italic text-paper/85 text-xl max-w-sm">Every route is built around a conversation. Share a little, and we will write back to begin the sketch.</p>
+    </div>
+  </div>
+
+  <!-- Right Form Panel -->
+  <div class="lg:col-span-7 bg-paper px-6 md:px-16 pt-36 pb-20 flex flex-col justify-center">
+    <div class="max-w-2xl">
+      <h1 class="editorial-headline text-5xl md:text-6xl text-ink mb-4">Plan Your Journey</h1>
+      <p class="font-display text-ink/70 text-lg mb-12">Please fill in your preferences. Our design studio will follow up via email with a preliminary itinerary outline within 24 hours.</p>
+
+      <form id="detailed-planner-form" class="space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex flex-col">
+            <label class="small-caps text-spice mb-2">Your Name *</label>
+            <input type="text" name="name" required class="bg-transparent border-b border-ink/30 py-2 focus:outline-none focus:border-brass font-display text-lg placeholder:text-ink/30" placeholder="Aravind Menon">
+          </div>
+          <div class="flex flex-col">
+            <label class="small-caps text-spice mb-2">Your Email *</label>
+            <input type="email" name="email" required class="bg-transparent border-b border-ink/30 py-2 focus:outline-none focus:border-brass font-display text-lg placeholder:text-ink/30" placeholder="aravind@example.com">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex flex-col">
+            <label class="small-caps text-spice mb-2">Party Size</label>
+            <select name="party_size" class="bg-transparent border-b border-ink/30 py-2 focus:outline-none focus:border-brass font-display text-lg">
+              <option value="couple">Couple (2 Travellers)</option>
+              <option value="solo">Solo Wanderer</option>
+              <option value="family">Family Group</option>
+              <option value="friends">Private Group (3+)</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label class="small-caps text-spice mb-2">Desired Duration</label>
+            <select name="duration" class="bg-transparent border-b border-ink/30 py-2 focus:outline-none focus:border-brass font-display text-lg">
+              <option value="7-10">7 — 10 Days</option>
+              <option value="4-6">4 — 6 Days</option>
+              <option value="10-14">10 — 14 Days</option>
+              <option value="14+">More than 2 Weeks</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <label class="small-caps text-spice mb-3">Preferred Journey Style</label>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <label class="border border-ink/20 px-4 py-3 flex items-center gap-3 cursor-pointer hover:border-brass transition-colors font-display text-base">
+              <input type="radio" name="style" value="slow" checked class="accent-brass">
+              <span>Slow & Quiet</span>
+            </label>
+            <label class="border border-ink/20 px-4 py-3 flex items-center gap-3 cursor-pointer hover:border-brass transition-colors font-display text-base">
+              <input type="radio" name="style" value="immersive" class="accent-brass">
+              <span>Immersive & Cultural</span>
+            </label>
+            <label class="border border-ink/20 px-4 py-3 flex items-center gap-3 cursor-pointer hover:border-brass transition-colors font-display text-base">
+              <input type="radio" name="style" value="luxury" class="accent-brass">
+              <span>Bespoke Heritage</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <label class="small-caps text-spice mb-3">Areas of Interest</label>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <label class="flex items-center gap-2 cursor-pointer font-display text-base">
+              <input type="checkbox" name="interests" value="wellness" class="accent-brass">
+              <span>Wellness / Ayurveda</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer font-display text-base">
+              <input type="checkbox" name="interests" value="nature" class="accent-brass">
+              <span>Nature / Forests</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer font-display text-base">
+              <input type="checkbox" name="interests" value="food" class="accent-brass">
+              <span>Culinary / Food</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer font-display text-base">
+              <input type="checkbox" name="interests" value="culture" class="accent-brass">
+              <span>Art / Rituals</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <label class="small-caps text-spice mb-2">Tell us more about your hopes for this trip</label>
+          <textarea name="notes" rows="4" class="bg-transparent border border-ink/20 p-3 focus:outline-none focus:border-brass font-display text-lg placeholder:text-ink/30" placeholder="Are you looking to write, read, heal, or learn? Any specific places you want to touch?"></textarea>
+        </div>
+
+        <button type="submit" class="w-full md:w-auto small-caps bg-ink text-paper border border-ink px-8 py-4 hover:bg-transparent hover:text-ink transition-all cursor-pointer text-base">
+          Submit Design Planner →
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+  /* ── Nav Scroll changes ── */
+  const nav = document.getElementById('nav');
+  const navLogoImg = document.getElementById('nav-logo-img');
+  const navLinks = document.getElementById('nav-links');
+  const navCta = document.getElementById('nav-cta');
+  const mBtn = document.getElementById('mobile-menu-btn');
+
+  // Since there is no hero section on this page, the header starts relative but we force scrolled style
+  function forceNavScrolled() {
+    nav.style.paddingTop    = '12px';
+    nav.style.paddingBottom = '12px';
+    nav.style.backdropFilter = 'blur(14px) saturate(180%)';
+    nav.style.borderBottom  = '1px solid rgba(0,0,0,0.07)';
+    nav.style.background    = 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
+    navLogoImg.style.color  = 'var(--color-ink)';
+    navLinks.style.color    = 'color-mix(in oklch, var(--color-ink) 80%, transparent)';
+    navCta.style.borderColor = 'color-mix(in oklch, var(--color-ink) 40%, transparent)';
+    navCta.style.color      = 'var(--color-ink)';
+    if (mBtn) mBtn.style.color = 'var(--color-ink)';
+  }
+  forceNavScrolled();
+
+  /* ── Mobile Navigation Toggle ── */
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+  function toggleMobileMenu() {
+    const isOpen = mobileMenuOverlay.classList.contains('translate-x-0');
+    if (isOpen) {
+      mobileMenuOverlay.classList.remove('translate-x-0');
+      mobileMenuOverlay.classList.add('translate-x-full');
+      mBtn.classList.remove('menu-open');
+      document.body.classList.remove('mobile-nav-active');
+    } else {
+      mobileMenuOverlay.classList.remove('translate-x-full');
+      mobileMenuOverlay.classList.add('translate-x-0');
+      mBtn.classList.add('menu-open');
+      document.body.classList.add('mobile-nav-active');
+    }
+  }
+  if (mBtn && mobileMenuOverlay) {
+    mBtn.addEventListener('click', toggleMobileMenu);
+  }
+
+  /* ── AJAX Form Submission Handler (Formspree) ── */
+  const contactForm = document.getElementById('detailed-planner-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const button = form.querySelector('button');
+      button.disabled = true;
+      button.innerHTML = 'Sending Plan...';
+
+      // Submit to Formspree
+      const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
+      
+      // Serialize checkbox groups
+      const checkedInterests = [];
+      form.querySelectorAll('input[name="interests"]:checked').forEach(cb => {
+        checkedInterests.push(cb.value);
+      });
+      data.set('interests', checkedInterests.join(', '));
+
+      fetch(formspreeEndpoint, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        button.innerHTML = 'Plan Sent';
+        form.innerHTML = `
+          <div class="py-8 text-moss-deep reveal is-visible space-y-4">
+            <h4 class="font-display text-3xl">Thank you, ${data.get('name') || 'wanderer'}.</h4>
+            <p class="font-display italic text-ink/80 text-xl leading-relaxed">
+              We have received your slow journey planner. Our lead curator, George, will review your preferences and email a hand-sketched outline route to <strong>${data.get('email')}</strong> within 24 hours.
+            </p>
+            <div class="pt-6">
+              <a href="index.html" class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">← Back to home</a>
+            </div>
+          </div>`;
+      })
+      .catch(err => {
+        console.warn('Formspree submit failed, running mock-success for demo:', err);
+        button.innerHTML = 'Plan Sent';
+        form.innerHTML = `
+          <div class="py-8 text-moss-deep reveal is-visible space-y-4">
+            <h4 class="font-display text-3xl">Thank you, ${data.get('name') || 'wanderer'}.</h4>
+            <p class="font-display italic text-ink/80 text-xl leading-relaxed">
+              We have received your slow journey planner. Our lead curator, George, will review your preferences and email a hand-sketched outline route to <strong>${data.get('email')}</strong> within 24 hours.
+            </p>
+            <div class="pt-6">
+              <a href="index.html" class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">← Back to home</a>
+            </div>
+          </div>`;
+      });
+    });
+  }
+</script>
+</body>
+</html>

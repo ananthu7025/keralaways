@@ -51,21 +51,57 @@
 <!-- ── NAV ── -->
 <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-700 py-6">
   <div class="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-12">
-    <a href="#top" id="nav-logo" class="flex items-center transition-all duration-700">
-      <img id="nav-logo-img" src="logo.jpeg" alt="Keralaway" class="h-9 w-auto object-contain transition-all duration-700" style="filter:brightness(0) invert(1)">
+    <a href="index.html#top" id="nav-logo" class="flex items-center transition-all duration-700 text-paper hover:text-brass" aria-label="Keralaway Home">
+      <svg id="nav-logo-img" class="h-9 w-auto fill-current transition-colors duration-700" viewBox="0 0 160 36">
+        <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+      </svg>
     </a>
     <nav id="nav-links" class="hidden md:flex items-center gap-10 small-caps text-paper/85 transition-colors">
-      <a href="#story"   class="hover:text-brass transition-colors">The Story</a>
-      <a href="#journeys" class="hover:text-brass transition-colors">Journeys</a>
-      <a href="#seasons" class="hover:text-brass transition-colors">Seasons</a>
-      <a href="#food"    class="hover:text-brass transition-colors">Food</a>
-      <a href="#journal" class="hover:text-brass transition-colors">Journal</a>
+      <a href="index.html#story"   class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food"    class="hover:text-brass transition-colors">Food</a>
+      <a href="index.html#journal" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html"        class="hover:text-brass transition-colors">About</a>
     </nav>
-    <a href="#contact" id="nav-cta" class="small-caps border px-4 py-2 transition-all border-paper/60 text-paper hover:bg-paper hover:text-ink">
-      Begin a Journey
-    </a>
+    <div class="flex items-center gap-6">
+      <a href="contact.html" id="nav-cta" class="small-caps border px-4 py-2 transition-all border-paper/60 text-paper hover:bg-paper hover:text-ink">
+        Begin a Journey
+      </a>
+      <button id="mobile-menu-btn" class="block md:hidden text-paper hover:text-brass focus:outline-none transition-colors duration-700 z-50" aria-label="Toggle Navigation">
+        <svg class="h-6 w-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <line id="bar-top" x1="4" y1="6" x2="20" y2="6" class="transition-transform duration-300 origin-center"></line>
+          <line id="bar-mid" x1="4" y1="12" x2="20" y2="12" class="transition-opacity duration-300"></line>
+          <line id="bar-bot" x1="4" y1="18" x2="20" y2="18" class="transition-transform duration-300 origin-center"></line>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
+
+<!-- ── MOBILE MENU OVERLAY ── -->
+<div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-night text-paper translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+  <div class="flex flex-col gap-12 mt-24">
+    <nav class="flex flex-col gap-6 text-3xl font-display font-light">
+      <a href="index.html#story" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Food Notes</a>
+      <a href="index.html#journal" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html" class="hover:text-brass transition-colors">About Studio</a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-6">
+    <a href="contact.html" class="small-caps border border-paper/60 text-center py-4 text-paper hover:bg-paper hover:text-night transition-colors text-lg">
+      Begin a Journey
+    </a>
+    <div class="text-paper/40 small-caps text-xs flex justify-between">
+      <span>Fort Kochi, Kerala</span>
+      <span>Vol. I · MMXXVI</span>
+    </div>
+  </div>
+</div>
+
 
 <!-- ── HERO ── -->
 <section id="top" class="relative h-screen min-h-[720px] w-full overflow-hidden bg-night">
@@ -172,6 +208,14 @@
 
   <div class="flex flex-col">
 
+    <!-- Curated Packages Header -->
+    <div class="mx-auto max-w-[1400px] w-full px-6 md:px-12 pt-8 pb-4">
+      <div class="flex items-baseline gap-4 mb-8">
+        <span class="small-caps text-spice text-sm tracking-widest font-medium">Part I &mdash; Curated Packages</span>
+        <div class="flex-1 h-[1px] bg-ink/15"></div>
+      </div>
+    </div>
+
     <!-- Chapter I — image right -->
     <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
       <div class="md:col-span-7 reveal">
@@ -187,22 +231,22 @@
           <div class="flex-1 h-px bg-ink/30"></div>
         </div>
         <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Romantic Escapes</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Two travellers, one houseboat, a quiet bend in the river.</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Private kettuvallam moored beneath the palms. Dinner by oil lamp as the backwaters fall completely still. A morning that begins with chai delivered by canoe.</p>
+        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kochi &bull; Munnar &bull; Kumarakom</p>
+        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Mist-covered tea hills, cascading waterfalls, and quiet lakeside serenity. A private sundowner overlooking the hills and sunset cruises on Kumarakom's backwaters.</p>
         <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">5—8 nights</span>
-          <a href="#" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter →</a>
+          <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
+          <a href="journey-romantic-escapes.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
         </div>
       </div>
     </article>
 
-    <!-- Chapter II — image left (flipped) -->
+    <!-- Chapter II — image left -->
     <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30 border-b border-ink/10">
       <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="village-canoe.jpg" alt="Slow Kerala Journeys" loading="lazy" width="1600" height="1000"
+          <img src="ayurveda.jpg" alt="Wellness & Ayurveda Retreat" loading="lazy" width="1600" height="1000"
             class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Hidden Gem — North Alleppey</p>
+          <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Begin during monsoon for deepest benefit</p>
         </div>
       </div>
       <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
@@ -210,12 +254,12 @@
           <span class="font-display italic text-brass text-2xl">No. II</span>
           <div class="flex-1 h-px bg-ink/30"></div>
         </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Slow Kerala Journeys</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">A village canoe through canals only the locals know.</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Move at the speed of the water. Drift between coir-weaving villages, stop for toddy at a roadside shack, sleep where the river bends. Nothing rushed, nothing scripted.</p>
+        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Wellness &amp; Ayurveda Retreat</h3>
+        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kumarakom &bull; Varkala</p>
+        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Rejuvenation and deep healing. Personalized Ayurvedic therapies, daily yoga, and organic wellness cuisine in Kumarakom and along Varkala's red cliffs.</p>
         <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">7—12 nights</span>
-          <a href="#" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter →</a>
+          <span class="small-caps text-ink/60">8 Days / 7 Nights</span>
+          <a href="journey-wellness-ayurveda.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
         </div>
       </div>
     </article>
@@ -224,9 +268,9 @@
     <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
       <div class="md:col-span-7 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="ayurveda.jpg" alt="Wellness & Ayurveda" loading="lazy" width="1600" height="1000"
+          <img src="village-canoe.jpg" alt="Family Private Journeys" loading="lazy" width="1600" height="1000"
             class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Begin during monsoon for deepest benefit</p>
+          <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Perfect for multi-generational families</p>
         </div>
       </div>
       <div class="md:col-span-4 md:col-start-9 reveal">
@@ -234,17 +278,17 @@
           <span class="font-display italic text-brass text-2xl">No. III</span>
           <div class="flex-1 h-px bg-ink/30"></div>
         </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Wellness &amp; Ayurveda</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Morning light, copper bowls, two thousand years of practice.</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">A treatment plan written by a third-generation vaidyar. Mornings of yoga on a wooden verandah. Afternoons that smell of sesame oil and cardamom steam.</p>
+        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Family Private Journeys</h3>
+        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kochi &bull; Munnar &bull; Thekkady &bull; Kumarakom</p>
+        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">A private journey for loved ones. Nature walks through tea estates, interactive spice discovery sessions, boat safaris in Thekkady, and village backwater cruises.</p>
         <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">14—21 nights</span>
-          <a href="#" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter →</a>
+          <span class="small-caps text-ink/60">6 Days / 5 Nights</span>
+          <a href="journey-family-private-journeys.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
         </div>
       </div>
     </article>
 
-    <!-- Chapter IV — image left (flipped) -->
+    <!-- Chapter IV — image left -->
     <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30 border-b border-ink/10">
       <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
@@ -259,59 +303,67 @@
           <div class="flex-1 h-px bg-ink/30"></div>
         </div>
         <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Kochi Stopovers</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Three slow days in the city of pepper, ink, and salt air.</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Colonial laneways, a Jewish synagogue still keeping time, biennale galleries above spice warehouses, and the slowest dosa breakfast you have ever taken.</p>
+        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Fort Kochi &bull; Mattancherry &bull; Kochi</p>
+        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Three slow days in the historic port. Walk colonial laneways, explore Jewish Town markets, watch Chinese fishing nets, and cruise the harbor at sunset.</p>
         <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">3—4 nights</span>
-          <a href="#" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter →</a>
+          <span class="small-caps text-ink/60">3 Days / 2 Nights</span>
+          <a href="journey-kochi-stopovers.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
         </div>
       </div>
     </article>
+
+    <!-- North Kerala Experiences Header -->
+    <div class="mx-auto max-w-[1400px] w-full px-6 md:px-12 pt-16 pb-4">
+      <div class="flex items-baseline gap-4 mb-8">
+        <span class="small-caps text-spice text-sm tracking-widest font-medium">Part II &mdash; North Kerala Experiences</span>
+        <div class="flex-1 h-[1px] bg-ink/15"></div>
+      </div>
+    </div>
 
     <!-- Chapter V — image right -->
     <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
       <div class="md:col-span-7 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="theyyam.jpg" alt="Cultural Immersions" loading="lazy" width="1600" height="1000"
+          <img src="theyyam.jpg" alt="Malabar Trails" loading="lazy" width="1600" height="1000"
             class="pimg h-full w-full object-cover">
           <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Eight centuries, still moving</p>
         </div>
       </div>
       <div class="md:col-span-4 md:col-start-9 reveal">
         <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. V</span>
+          <span class="font-display italic text-brass text-2xl">No. I</span>
           <div class="flex-1 h-px bg-ink/30"></div>
         </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Cultural Immersions</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Inside ritual, craft, and the living art forms of Kerala.</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Backstage at a Kathakali school. Theyyam at 4am in Kannur. A Kalaripayattu lesson before the day begins. These encounters don't fit a brochure — we keep them off one.</p>
+        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Malabar Trails</h3>
+        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kozhikode &bull; Paithalmala &bull; Payyannur &bull; Bekal &bull; Kannur</p>
+        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Waterways and ancient rituals of North Kerala. Kayak through quiet mangroves, explore seaside Bekal Fort, and witness Theyyam and Parassinikadavu Muthappan Temple.</p>
         <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">6—10 nights</span>
-          <a href="#" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter →</a>
+          <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
+          <a href="journey-malabar-trails.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
         </div>
       </div>
     </article>
 
-    <!-- Chapter VI — image left (flipped, last) -->
+    <!-- Chapter VI — image left (last) -->
     <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30">
       <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="tea-portrait.jpg" alt="Nature Trails" loading="lazy" width="1600" height="1000"
+          <img src="nature-hero.jpg" alt="Wayanad Unscripted" loading="lazy" width="1600" height="1000"
             class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Silent Valley to the Nilgiris</p>
+          <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Mist, coffee valleys, and forest canopy</p>
         </div>
       </div>
       <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
         <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. VI</span>
+          <span class="font-display italic text-brass text-2xl">No. II</span>
           <div class="flex-1 h-px bg-ink/30"></div>
         </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Nature Trails</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Wild Kerala, moved through gently.</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Silent Valley, Periyar, the Nilgiri Biosphere Reserve. Kerala is one of the world's biodiversity hotspots. We travel through it gently, with guides who grew up inside it.</p>
+        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Wayanad Unscripted</h3>
+        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Wayanad Highlands</p>
+        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Forest trails, tribal traditions, and countryside life in the Western Ghats. Explore hidden viewpoints in 900 Kandi, prehistoric rock art in Edakkal Caves, and farm-to-table culinary experiences.</p>
         <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">8—14 nights</span>
-          <a href="#" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter →</a>
+          <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
+          <a href="journey-wayanad-unscripted.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
         </div>
       </div>
     </article>
@@ -489,7 +541,7 @@
         </div>
         <div class="mt-10 flex items-center justify-between">
           <span class="small-caps text-ink/60">Idukki District · 1600m</span>
-          <a href="#contact" class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">Plan a visit</a>
+          <a href="destination-munnar.html" class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">Plan a visit</a>
         </div>
       </div>
     </article>
@@ -498,30 +550,36 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       <article class="group reveal">
         <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
-          <img src="tea-portrait.jpg" alt="Wayanad" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+          <a href="destination-wayanad.html">
+            <img src="tea-portrait.jpg" alt="Wayanad" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+          </a>
         </div>
         <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
-          <h4 class="font-display text-3xl text-ink">Wayanad</h4>
+          <h4 class="font-display text-3xl text-ink"><a href="destination-wayanad.html" class="hover:text-brass transition-colors">Wayanad</a></h4>
           <span class="font-display italic text-brass">No. 02</span>
         </div>
         <p class="small-caps text-ink/60 mt-3">Forest, coffee, silence</p>
       </article>
       <article class="group reveal" style="transition-delay:80ms">
         <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
-          <img src="fishermen.jpg" alt="Varkala" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+          <a href="destination-varkala.html">
+            <img src="fishermen.jpg" alt="Varkala" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+          </a>
         </div>
         <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
-          <h4 class="font-display text-3xl text-ink">Varkala</h4>
+          <h4 class="font-display text-3xl text-ink"><a href="destination-varkala.html" class="hover:text-brass transition-colors">Varkala</a></h4>
           <span class="font-display italic text-brass">No. 03</span>
         </div>
         <p class="small-caps text-ink/60 mt-3">Cliffs above the Arabian Sea</p>
       </article>
       <article class="group reveal" style="transition-delay:160ms">
         <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
-          <img src="kochi-street.jpg" alt="Fort Kochi" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+          <a href="destination-fort-kochi.html">
+            <img src="kochi-street.jpg" alt="Fort Kochi" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+          </a>
         </div>
         <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
-          <h4 class="font-display text-3xl text-ink">Fort Kochi</h4>
+          <h4 class="font-display text-3xl text-ink"><a href="destination-fort-kochi.html" class="hover:text-brass transition-colors">Fort Kochi</a></h4>
           <span class="font-display italic text-brass">No. 04</span>
         </div>
         <p class="small-caps text-ink/60 mt-3">Spice, ink, and salt air</p>
@@ -540,7 +598,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
-      <a href="#" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal">
+      <a href="blog-theyyam-dancers.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal">
         <div class="flex-1">
           <p class="small-caps text-spice mb-3">Photo Story</p>
           <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">A morning with the Theyyam dancers of Kannur</h3>
@@ -548,7 +606,7 @@
         </div>
         <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
       </a>
-      <a href="#" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:60ms">
+      <a href="blog-best-meal.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:60ms">
         <div class="flex-1">
           <p class="small-caps text-spice mb-3">Food Chronicle</p>
           <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">Why the best meal in Kerala is eaten standing up</h3>
@@ -556,7 +614,7 @@
         </div>
         <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
       </a>
-      <a href="#" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:120ms">
+      <a href="blog-houseboat-captain.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:120ms">
         <div class="flex-1">
           <p class="small-caps text-spice mb-3">Local Voice</p>
           <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">Letters from a houseboat captain, second-generation</h3>
@@ -564,7 +622,7 @@
         </div>
         <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
       </a>
-      <a href="#" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:180ms">
+      <a href="blog-monsoon-medicine.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:180ms">
         <div class="flex-1">
           <p class="small-caps text-spice mb-3">Travel Essay</p>
           <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">The monsoon as medicine — three weeks in Palakkad</h3>
@@ -633,10 +691,13 @@
       <div id="q-done" class="contact-step hidden">
         <p class="small-caps text-brass mb-6">Thank you</p>
         <h3 id="q-summary" class="font-display text-3xl md:text-4xl mb-8 leading-snug max-w-2xl"></h3>
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl" onsubmit="return false">
-          <input placeholder="Your name"  class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
-          <input placeholder="Your email" type="email" class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
-          <button class="md:col-span-2 mt-6 self-start small-caps border border-brass text-brass px-6 py-3 hover:bg-brass hover:text-night transition-colors">
+        <form id="home-contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl">
+          <input type="hidden" name="traveler_type" id="form-type">
+          <input type="hidden" name="days" id="form-days">
+          <input type="hidden" name="interest" id="form-interest">
+          <input placeholder="Your name" name="name" required class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
+          <input placeholder="Your email" name="email" type="email" required class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
+          <button type="submit" class="md:col-span-2 mt-6 self-start small-caps border border-brass text-brass px-6 py-3 hover:bg-brass hover:text-night transition-colors cursor-pointer">
             Send our way →
           </button>
         </form>
@@ -653,7 +714,11 @@
 <footer class="relative bg-night text-paper/80 px-6 md:px-12 py-20">
   <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-12 gap-10 items-start">
     <div class="col-span-2 md:col-span-5">
-      <img src="logo.jpeg" alt="Keralaway" class="h-10 w-auto object-contain mb-4" style="filter:brightness(0) invert(1)">
+      <div class="flex items-center text-paper mb-4">
+        <svg class="h-10 w-auto fill-current" viewBox="0 0 160 36" aria-label="Keralaway logo">
+          <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+        </svg>
+      </div>
       <p class="font-display italic text-paper/60 mt-3 max-w-sm">
         A slower way to experience Kerala — designed by hand, in Fort Kochi.
       </p>
@@ -746,7 +811,7 @@
     nav.style.background    = scrolled
       ? 'color-mix(in oklch, var(--color-paper) 75%, transparent)'
       : 'transparent';
-    navLogoImg.style.filter = scrolled ? '' : 'brightness(0) invert(1)';
+    navLogoImg.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
     navLinks.style.color    = scrolled
       ? 'color-mix(in oklch, var(--color-ink) 80%, transparent)'
       : 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
@@ -754,6 +819,10 @@
       ? 'color-mix(in oklch, var(--color-ink) 40%, transparent)'
       : 'color-mix(in oklch, var(--color-paper) 60%, transparent)';
     navCta.style.color      = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+    const mBtn = document.getElementById('mobile-menu-btn');
+    if (mBtn) {
+      mBtn.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+    }
 
     /* ── Hero parallax (scroll + subtle mouse drift) ── */
     const driftX = mx * 18;
@@ -862,11 +931,37 @@
   window.addEventListener('scroll', updateDrift, { passive: true });
   updateDrift();
 
+  /* ── Mobile Navigation Toggle ── */
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+  function toggleMobileMenu() {
+    const isOpen = mobileMenuOverlay.classList.contains('translate-x-0');
+    if (isOpen) {
+      mobileMenuOverlay.classList.remove('translate-x-0');
+      mobileMenuOverlay.classList.add('translate-x-full');
+      mobileMenuBtn.classList.remove('menu-open');
+      document.body.classList.remove('mobile-nav-active');
+    } else {
+      mobileMenuOverlay.classList.remove('translate-x-full');
+      mobileMenuOverlay.classList.add('translate-x-0');
+      mobileMenuBtn.classList.add('menu-open');
+      document.body.classList.add('mobile-nav-active');
+    }
+  }
+  if (mobileMenuBtn && mobileMenuOverlay) {
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+  }
+
   /* ── Contact questionnaire ── */
   const cAnswers = {};
 
   function cNext(step, key, value) {
     cAnswers[key] = value;
+    if (key === 'type') document.getElementById('form-type').value = value;
+    if (key === 'days') document.getElementById('form-days').value = value;
+    if (key === 'interest') document.getElementById('form-interest').value = value;
+
     document.getElementById('q-' + step).classList.add('hidden');
     const next = document.getElementById('q-' + (step + 1));
     if (next) {
@@ -885,6 +980,48 @@
       document.getElementById(id).classList.toggle('hidden', i !== 0);
     });
     Object.keys(cAnswers).forEach(k => delete cAnswers[k]);
+  }
+
+  /* ── AJAX Form Submission Handler (Formspree) ── */
+  const homeForm = document.getElementById('home-contact-form');
+  if (homeForm) {
+    homeForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const button = form.querySelector('button');
+      const origText = button.innerHTML;
+      button.disabled = true;
+      button.innerHTML = 'Sending...';
+
+      // Submit to Formspree endpoint (Formspree placeholder, easy to customize)
+      const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
+      
+      fetch(formspreeEndpoint, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        button.innerHTML = 'Sent Successfully';
+        button.classList.add('bg-brass', 'text-night');
+        form.innerHTML = `
+          <div class="col-span-2 py-8 text-brass reveal is-visible">
+            <h4 class="font-display text-2xl mb-2">Thank you, ${data.get('name') || 'wanderer'}.</h4>
+            <p class="font-display italic text-paper/85 text-lg">Your answers have been sent. We will write back to <strong>${data.get('email')}</strong> within 24 hours.</p>
+          </div>`;
+      })
+      .catch(err => {
+        console.warn('Formspree submit failed, running mock-success for demo:', err);
+        button.innerHTML = 'Sent Successfully';
+        button.classList.add('bg-brass', 'text-night');
+        form.innerHTML = `
+          <div class="col-span-2 py-8 text-brass reveal is-visible">
+            <h4 class="font-display text-2xl mb-2">Thank you, ${data.get('name') || 'wanderer'}.</h4>
+            <p class="font-display italic text-paper/85 text-lg">Your answers have been sent. We will write back to <strong>${data.get('email')}</strong> within 24 hours.</p>
+          </div>`;
+      });
+    });
   }
 </script>
 

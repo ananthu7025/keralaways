@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alleppey Destination Guide — Keralaway</title>
+  <meta name="description" content="Quiet backwater channels, private houseboats, and lagoonside palaces. Plan your slow visit to Alleppey.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Tailwind v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: "Fraunces", ui-serif, Georgia, serif;
+      --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-hand:    "Caveat", cursive;
+
+      --color-paper:     oklch(0.965 0.012 85);
+      --color-ink:       oklch(0.18  0.012 80);
+      --color-night:     oklch(0.14  0.008 90);
+      --color-moss-deep: oklch(0.28  0.045 145);
+      --color-moss:      oklch(0.42  0.055 150);
+      --color-tea:       oklch(0.55  0.07  140);
+      --color-mist:      oklch(0.88  0.012 200);
+      --color-stone:     oklch(0.62  0.015 230);
+      --color-brass:     oklch(0.68  0.11  75);
+      --color-coconut:   oklch(0.78  0.035 70);
+      --color-spice:     oklch(0.42  0.10  45);
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink overflow-x-hidden">
+
+<!-- ── NAV ── -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-700 py-6">
+  <div class="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-12">
+    <a href="index.html#top" id="nav-logo" class="flex items-center transition-all duration-700 text-paper hover:text-brass" aria-label="Keralaway Home">
+      <svg id="nav-logo-img" class="h-9 w-auto fill-current transition-colors duration-700" viewBox="0 0 160 36">
+        <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+      </svg>
+    </a>
+    <nav id="nav-links" class="hidden md:flex items-center gap-10 small-caps text-paper/85 transition-colors">
+      <a href="index.html#story"   class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food"    class="hover:text-brass transition-colors">Food</a>
+      <a href="index.html#journal" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html"        class="hover:text-brass transition-colors">About</a>
+    </nav>
+    <div class="flex items-center gap-6">
+      <a href="contact.html" id="nav-cta" class="small-caps border px-4 py-2 transition-all border-paper/60 text-paper hover:bg-paper hover:text-ink">
+        Begin a Journey
+      </a>
+      <button id="mobile-menu-btn" class="block md:hidden text-paper hover:text-brass focus:outline-none transition-colors duration-700 z-50" aria-label="Toggle Navigation">
+        <svg class="h-6 w-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+          <line id="bar-top" x1="4" y1="6" x2="20" y2="6" class="transition-transform duration-300 origin-center"></line>
+          <line id="bar-mid" x1="4" y1="12" x2="20" y2="12" class="transition-opacity duration-300"></line>
+          <line id="bar-bot" x1="4" y1="18" x2="20" y2="18" class="transition-transform duration-300 origin-center"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── MOBILE MENU OVERLAY ── -->
+<div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-night text-paper translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+  <div class="flex flex-col gap-12 mt-24">
+    <nav class="flex flex-col gap-6 text-3xl font-display font-light">
+      <a href="index.html#story" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">The Story</a>
+      <a href="index.html#journeys" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journeys</a>
+      <a href="index.html#seasons" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Seasons</a>
+      <a href="index.html#food" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Food Notes</a>
+      <a href="index.html#journal" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journal</a>
+      <a href="about.html" class="hover:text-brass transition-colors">About Studio</a>
+    </nav>
+  </div>
+  <div class="flex flex-col gap-6">
+    <a href="contact.html" class="small-caps border border-paper/60 text-center py-4 text-paper hover:bg-paper hover:text-night transition-colors text-lg">
+      Begin a Journey
+    </a>
+    <div class="text-paper/40 small-caps text-xs flex justify-between">
+      <span>Fort Kochi, Kerala</span>
+      <span>Vol. I · MMXXVI</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="relative h-[60vh] min-h-[450px] w-full overflow-hidden bg-night flex items-center">
+  <div class="absolute inset-0">
+    <img src="hero-backwaters.jpg" alt="Alleppey backwaters at sunrise" class="h-full w-full object-cover opacity-65">
+    <div class="absolute inset-0 bg-gradient-to-b from-night/40 via-night/60 to-night"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl px-6 md:px-12 mt-20">
+    <p class="small-caps text-brass mb-4">— Destination Guide</p>
+    <h1 class="editorial-headline text-paper text-6xl md:text-8xl leading-none">
+      Alleppey
+    </h1>
+    <p class="font-display italic text-paper/85 text-xl md:text-2xl mt-6 max-w-xl">
+      "Lush waterpaths &amp; floating lives."
+    </p>
+  </div>
+</section>
+
+<!-- ── OVERVIEW ── -->
+<section class="py-20 px-6 md:px-12 bg-paper">
+  <div class="mx-auto max-w-[1200px] grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <div class="lg:col-span-5 space-y-6">
+      <p class="small-caps text-spice">The Waterways</p>
+      <h2 class="editorial-headline text-4xl md:text-5xl text-ink leading-tight">Quiet canals &amp; palm shores.</h2>
+      <p class="font-display text-lg text-ink/75 leading-relaxed">
+        Alleppey (Alappuzha) is the heart of Kerala's famous backwaters. A vast network of lagoons, rivers, and canals, it is a region where water is the highway and life moves at the slow pace of a wooden paddle.
+      </p>
+      <div class="pt-6 border-t border-ink/10 space-y-2">
+        <div class="flex justify-between"><span class="small-caps text-xs">Altitude</span><span class="font-display">Sea Level (Kuttanad is below sea level)</span></div>
+        <div class="flex justify-between"><span class="small-caps text-xs">Best Time</span><span class="font-display">October — February</span></div>
+        <div class="flex justify-between"><span class="small-caps text-xs">Smell of the air</span><span class="font-display">Fresh water, river weed, &amp; woodsmoke</span></div>
+      </div>
+    </div>
+
+    <!-- Illustrated SVG Map -->
+    <div class="lg:col-span-7 border border-ink/10 p-6 bg-mist/20 rounded shadow-inner">
+      <p class="small-caps text-spice text-center mb-4">Curated Local Map</p>
+      <svg class="w-full h-auto max-w-[500px] mx-auto fill-none stroke-ink/30 stroke-1" viewBox="0 0 400 300">
+        <!-- Backwater outline illustration -->
+        <path d="M50,110 C90,140 130,90 190,140 C250,190 290,120 350,150" stroke-dasharray="3,3" />
+        <path d="M30,80 C80,110 110,60 170,110 C230,160 270,90 330,120" stroke-dasharray="2,2" class="opacity-50" />
+        
+        <!-- Markers -->
+        <!-- Raheem Residency -->
+        <g class="map-marker" transform="translate(110, 90)">
+          <circle r="6" class="fill-brass stroke-night stroke-2" />
+          <text x="12" y="4" class="map-label">Raheem Residency</text>
+        </g>
+        <!-- Kayal Island Retreat -->
+        <g class="map-marker" transform="translate(190, 120)">
+          <circle r="6" class="fill-brass stroke-night stroke-2" />
+          <text x="12" y="4" class="map-label">Kayal Island Retreat</text>
+        </g>
+        <!-- Kuttanad Canals -->
+        <g class="map-marker" transform="translate(270, 160)">
+          <circle r="6" class="fill-spice stroke-night stroke-2" />
+          <text x="-12" y="18" class="map-label text-right">Kuttanad Canals</text>
+        </g>
+
+        <!-- Compass Rose -->
+        <g transform="translate(350, 50)" class="stroke-ink/20">
+          <line x1="0" y1="-20" x2="0" y2="20" />
+          <line x1="-20" y1="0" x2="20" y2="0" />
+          <text x="-4" y="-24" class="font-display text-[9px] fill-ink/40">N</text>
+        </g>
+      </svg>
+      <p class="text-xs text-ink/50 text-center mt-4">Hover over pins to identify locations on your personalized walk itineraries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── STAYS WE RECOMMEND ── -->
+<section class="py-24 bg-mist/30 px-6 md:px-12 border-t border-b border-ink/10">
+  <div class="mx-auto max-w-[1200px]">
+    <h3 class="editorial-headline text-center text-4xl md:text-6xl text-ink mb-16">Stays We <em class="editorial-italic">Recommend</em></h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="bg-paper p-8 border border-ink/10 reveal">
+        <span class="small-caps text-brass">Restored Coastal Palace</span>
+        <h4 class="font-display text-3xl text-ink mt-2 mb-4">Raheem Residency</h4>
+        <p class="text-ink/70 leading-relaxed mb-6">A beautifully restored 1868 ancestral home located right on Alleppey Beach, featuring antique wooden furniture, high ceilings, and a quiet swimming pool in the courtyard.</p>
+        <span class="text-sm font-semibold text-spice">Features: Beachfront location, historic suites</span>
+      </div>
+
+      <div class="bg-paper p-8 border border-ink/10 reveal" style="transition-delay: 80ms">
+        <span class="small-caps text-brass">Private Backwater Island</span>
+        <h4 class="font-display text-3xl text-ink mt-2 mb-4">Kayal Island Retreat</h4>
+        <p class="text-ink/70 leading-relaxed mb-6">A boutique sanctuary situated on Kakkathuruthu (Island of Crows) on Vembanad Lake. Accessible only by rowboat, it offers ultimate quiet and water views.</p>
+        <span class="text-sm font-semibold text-spice">Features: Rowboat access, zero vehicle noise</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THINGS WE CURATE ── -->
+<section class="py-24 px-6 md:px-12 bg-paper">
+  <div class="mx-auto max-w-[1200px]">
+    <h3 class="editorial-headline text-center text-4xl md:text-6xl text-ink mb-16">Things We <em class="editorial-italic">Curate There</em></h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="border-t border-ink/30 pt-6 reveal">
+        <p class="font-hand text-spice text-2xl mb-2">No. 01</p>
+        <h4 class="font-display text-2xl text-ink mb-4">Dawn Canoe Drift</h4>
+        <p class="text-ink/75 leading-relaxed text-sm">A quiet paddle down the smallest channels of Kuttanad at sunrise, watching lilies bloom and children walking along the canal banks.</p>
+      </div>
+
+      <div class="border-t border-ink/30 pt-6 reveal" style="transition-delay: 80ms">
+        <p class="font-hand text-spice text-2xl mb-2">No. 02</p>
+        <h4 class="font-display text-2xl text-ink mb-4">Coir Weaving Workshop</h4>
+        <p class="text-ink/75 leading-relaxed text-sm">Visit a rural coir spinner to see how coconut husks are processed and hand-woven into golden coir ropes and mats.</p>
+      </div>
+
+      <div class="border-t border-ink/30 pt-6 reveal" style="transition-delay: 160ms">
+        <p class="font-hand text-spice text-2xl mb-2">No. 03</p>
+        <h4 class="font-display text-2xl text-ink mb-4">Toddy Shop Fish Lunch</h4>
+        <p class="text-ink/75 leading-relaxed text-sm">Savor an authentic, spicy curry lunch of river pearl spot (karimeen) wrapped in banana leaves, served in a local backwater toddy shop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="py-20 bg-moss-deep text-paper text-center">
+  <h3 class="editorial-headline text-4xl md:text-6xl mb-6">Drawn to Alleppey?</h3>
+  <p class="font-display italic text-paper/85 text-lg mb-8 max-w-md mx-auto">Let's design a custom slow itinerary that takes you into the waterways of the lake.</p>
+  <a href="contact.html" class="small-caps bg-brass text-night px-8 py-4 hover:bg-paper hover:text-ink transition-colors cursor-pointer text-center text-sm inline-block">Plan Your Alleppey Journey →</a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="relative bg-night text-paper/80 px-6 md:px-12 py-20">
+  <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-12 gap-10 items-start">
+    <div class="col-span-2 md:col-span-5">
+      <div class="flex items-center text-paper mb-4">
+        <svg class="h-10 w-auto fill-current" viewBox="0 0 160 36" aria-label="Keralaway logo">
+          <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+        </svg>
+      </div>
+      <p class="font-display italic text-paper/60 mt-3 max-w-sm">
+        A slower way to experience Kerala — designed by hand, in Fort Kochi.
+      </p>
+    </div>
+    <div class="md:col-span-2">
+      <p class="small-caps text-brass mb-4">Studio</p>
+      <ul class="space-y-2 font-display">
+        <li>Fort Kochi, 682001</li>
+        <li>Kerala, India</li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <p class="small-caps text-brass mb-4">Read</p>
+      <ul class="space-y-2 font-display">
+        <li><a href="index.html#journal"  class="hover:text-brass transition-colors">Journal</a></li>
+        <li><a href="index.html#seasons"  class="hover:text-brass transition-colors">Seasons</a></li>
+        <li><a href="index.html#food"     class="hover:text-brass transition-colors">Food Notes</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-3">
+      <p class="small-caps text-brass mb-4">Letters</p>
+      <p class="font-display text-paper/70 mb-4 text-sm">A quiet monthly note. No promotions.</p>
+      <form class="flex border-b border-paper/30" onsubmit="return false">
+        <input placeholder="your@email" class="flex-1 bg-transparent py-2 focus:outline-none placeholder:text-paper/40 font-display">
+        <button class="small-caps text-brass px-2">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="mx-auto max-w-[1400px] mt-16 pt-8 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4 small-caps text-paper/50">
+    <span>© MMXXVI Keralaway Tours</span>
+    <span class="font-hand text-brass text-lg" style="text-transform:none;letter-spacing:normal">written slowly, in Kerala</span>
+  </div>
+</footer>
+
+<script>
+  /* ── Header Scroll Color ── */
+  const nav = document.getElementById('nav');
+  const navLogoImg = document.getElementById('nav-logo-img');
+  const navLinks = document.getElementById('nav-links');
+  const navCta = document.getElementById('nav-cta');
+  const mBtn = document.getElementById('mobile-menu-btn');
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(tick); ticking = true; }
+  }, { passive: true });
+
+  function tick() {
+    ticking = false;
+    const y = window.scrollY;
+    const scrolled = y > 60;
+    nav.style.transition    = 'padding 0.7s ease, background 0.7s ease, border-color 0.7s ease';
+    nav.style.paddingTop    = scrolled ? '12px' : '24px';
+    nav.style.paddingBottom = scrolled ? '12px' : '24px';
+    nav.style.backdropFilter = scrolled ? 'blur(14px) saturate(180%)' : '';
+    nav.style.borderBottom  = scrolled ? '1px solid rgba(0,0,0,0.07)' : '';
+    nav.style.background    = scrolled
+      ? 'color-mix(in oklch, var(--color-paper) 75%, transparent)'
+      : 'transparent';
+    navLogoImg.style.color  = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+    navLinks.style.color    = scrolled
+      ? 'color-mix(in oklch, var(--color-ink) 80%, transparent)'
+      : 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
+    navCta.style.borderColor = scrolled
+      ? 'color-mix(in oklch, var(--color-ink) 40%, transparent)'
+      : 'color-mix(in oklch, var(--color-paper) 60%, transparent)';
+    navCta.style.color      = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+    if (mBtn) mBtn.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+  }
+  tick();
+
+  /* ── Mobile Navigation Toggle ── */
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+  function toggleMobileMenu() {
+    const isOpen = mobileMenuOverlay.classList.contains('translate-x-0');
+    if (isOpen) {
+      mobileMenuOverlay.classList.remove('translate-x-0');
+      mobileMenuOverlay.classList.add('translate-x-full');
+      mBtn.classList.remove('menu-open');
+      document.body.classList.remove('mobile-nav-active');
+    } else {
+      mobileMenuOverlay.classList.remove('translate-x-full');
+      mobileMenuOverlay.classList.add('translate-x-0');
+      mBtn.classList.add('menu-open');
+      document.body.classList.add('mobile-nav-active');
+    }
+  }
+  if (mBtn && mobileMenuOverlay) {
+    mBtn.addEventListener('click', toggleMobileMenu);
+  }
+
+  /* ── Reveal on scroll ── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
