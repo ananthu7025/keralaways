@@ -51,8 +51,8 @@
 <!-- ── NAV ── -->
 <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-700 py-6">
   <div class="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-12">
-    <a href="#top" id="nav-logo" class="font-display text-xl tracking-tight text-paper transition-colors">
-      Keralaway<span class="text-brass">.</span>
+    <a href="#top" id="nav-logo" class="flex items-center transition-all duration-700">
+      <img id="nav-logo-img" src="logo.jpeg" alt="Keralaway" class="h-9 w-auto object-contain transition-all duration-700" style="filter:brightness(0) invert(1)">
     </a>
     <nav id="nav-links" class="hidden md:flex items-center gap-10 small-caps text-paper/85 transition-colors">
       <a href="#story"   class="hover:text-brass transition-colors">The Story</a>
@@ -84,7 +84,7 @@
     <div></div>
     <div class="max-w-3xl">
       <p class="small-caps text-paper/70 mb-6">— Est. in the mist of Munnar</p>
-      <h1 class="editorial-headline text-paper" style="font-size: clamp(72px, 9.5vw, 140px); line-height: 0.85;">
+      <h1 id="hero-h1" class="editorial-headline text-paper" style="font-size: clamp(72px, 9.5vw, 140px); line-height: 0.85;">
         Keralaway
       </h1>
       <p class="mt-8 font-display italic text-paper/85 text-2xl md:text-3xl max-w-xl leading-snug">
@@ -142,6 +142,18 @@
   </div>
 </section>
 
+<!-- ── MARQUEE STRIP ── -->
+<div class="overflow-hidden border-t border-b border-ink/10 py-[14px] bg-ink select-none" aria-hidden="true">
+  <div class="marquee-track flex items-center gap-0" style="width:max-content">
+    <span class="flex items-center gap-10 pr-10 small-caps text-paper/50" style="font-size:0.68rem">
+      <span>Alleppey</span><span class="text-brass">·</span><span>Munnar</span><span class="text-brass">·</span><span>Wayanad</span><span class="text-brass">·</span><span>Theyyam</span><span class="text-brass">·</span><span>Varkala</span><span class="text-brass">·</span><span>Kathakali</span><span class="text-brass">·</span><span>Fort Kochi</span><span class="text-brass">·</span><span>Kalaripayattu</span><span class="text-brass">·</span><span>Backwaters</span><span class="text-brass">·</span><span>Ayurveda</span><span class="text-brass">·</span><span>Monsoon</span><span class="text-brass">·</span><span>Malabar</span><span class="text-brass">·</span><span>Palakkad</span><span class="text-brass">·</span><span>Kettuvallam</span><span class="text-brass">·</span>
+    </span>
+    <span class="flex items-center gap-10 pr-10 small-caps text-paper/50" style="font-size:0.68rem">
+      <span>Alleppey</span><span class="text-brass">·</span><span>Munnar</span><span class="text-brass">·</span><span>Wayanad</span><span class="text-brass">·</span><span>Theyyam</span><span class="text-brass">·</span><span>Varkala</span><span class="text-brass">·</span><span>Kathakali</span><span class="text-brass">·</span><span>Fort Kochi</span><span class="text-brass">·</span><span>Kalaripayattu</span><span class="text-brass">·</span><span>Backwaters</span><span class="text-brass">·</span><span>Ayurveda</span><span class="text-brass">·</span><span>Monsoon</span><span class="text-brass">·</span><span>Malabar</span><span class="text-brass">·</span><span>Palakkad</span><span class="text-brass">·</span><span>Kettuvallam</span><span class="text-brass">·</span>
+    </span>
+  </div>
+</div>
+
 <!-- ── JOURNEY COLLECTIONS ── -->
 <section id="journeys" class="relative bg-mist/40 py-24 md:py-32">
   <div class="px-6 md:px-12 mb-20">
@@ -165,7 +177,7 @@
       <div class="md:col-span-7 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
           <img src="houseboat-dusk.jpg" alt="Romantic Escapes" loading="lazy" width="1600" height="1000"
-            class="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105">
+            class="pimg h-full w-full object-cover">
           <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Best experienced October — February</p>
         </div>
       </div>
@@ -189,7 +201,7 @@
       <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
           <img src="village-canoe.jpg" alt="Slow Kerala Journeys" loading="lazy" width="1600" height="1000"
-            class="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105">
+            class="pimg h-full w-full object-cover">
           <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Hidden Gem — North Alleppey</p>
         </div>
       </div>
@@ -213,7 +225,7 @@
       <div class="md:col-span-7 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
           <img src="ayurveda.jpg" alt="Wellness & Ayurveda" loading="lazy" width="1600" height="1000"
-            class="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105">
+            class="pimg h-full w-full object-cover">
           <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Begin during monsoon for deepest benefit</p>
         </div>
       </div>
@@ -237,7 +249,7 @@
       <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
           <img src="kochi-street.jpg" alt="Kochi Stopovers" loading="lazy" width="1600" height="1000"
-            class="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105">
+            class="pimg h-full w-full object-cover">
           <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Local favourite — Princess Street at dawn</p>
         </div>
       </div>
@@ -261,7 +273,7 @@
       <div class="md:col-span-7 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
           <img src="theyyam.jpg" alt="Cultural Immersions" loading="lazy" width="1600" height="1000"
-            class="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105">
+            class="pimg h-full w-full object-cover">
           <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Eight centuries, still moving</p>
         </div>
       </div>
@@ -285,7 +297,7 @@
       <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:16/10">
           <img src="tea-portrait.jpg" alt="Nature Trails" loading="lazy" width="1600" height="1000"
-            class="h-full w-full object-cover transition-transform duration-[2000ms] hover:scale-105">
+            class="pimg h-full w-full object-cover">
           <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Silent Valley to the Nilgiris</p>
         </div>
       </div>
@@ -367,8 +379,10 @@
     </div>
 
     <div class="md:col-span-7 reveal">
-      <img src="food-spices.jpg" alt="Kerala spices and ingredients on a banana leaf"
-        loading="lazy" width="1408" height="1024" class="w-full h-auto object-cover">
+      <div class="overflow-hidden">
+        <img id="food-img" src="food-spices.jpg" alt="Kerala spices and ingredients on a banana leaf"
+          loading="lazy" width="1408" height="1024" class="w-full object-cover" style="height:110%;margin-top:-5%;will-change:transform">
+      </div>
     </div>
 
     <div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 reveal">
@@ -393,10 +407,10 @@
 </section>
 
 <!-- ── CULTURE (dark) ── -->
-<section class="relative bg-night text-paper py-32 md:py-44 overflow-hidden">
+<section id="culture-section" class="relative bg-night text-paper py-32 md:py-44 overflow-hidden">
   <div class="absolute inset-0">
-    <img src="temple-lamps.jpg" alt="Temple oil lamps at dusk" loading="lazy" width="1920" height="1024"
-      class="h-full w-full object-cover opacity-40">
+    <img id="culture-bg" src="temple-lamps.jpg" alt="Temple oil lamps at dusk" loading="lazy" width="1920" height="1024"
+      class="h-full w-full object-cover opacity-40" style="transform-origin:center;will-change:transform">
     <div class="absolute inset-0 bg-gradient-to-b from-night via-night/70 to-night"></div>
   </div>
 
@@ -420,13 +434,13 @@
     <div class="mx-auto max-w-[1400px] grid grid-cols-12 gap-6 mt-24">
       <figure class="col-span-12 md:col-span-7 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:4/3">
-          <img src="theyyam.jpg" alt="A Theyyam performer being painted before dawn" loading="lazy" class="h-full w-full object-cover">
+          <img src="theyyam.jpg" alt="A Theyyam performer being painted before dawn" loading="lazy" class="pimg h-full w-full object-cover">
         </div>
         <figcaption class="small-caps text-paper/60 mt-4">Plate I — Theyyam preparation, Kannur district, 04:12</figcaption>
       </figure>
       <figure class="col-span-12 md:col-span-4 md:col-start-9 md:mt-32 reveal">
         <div class="relative overflow-hidden" style="aspect-ratio:3/4">
-          <img src="fishermen.jpg" alt="Chinese fishing nets at sunset in Fort Kochi" loading="lazy" class="h-full w-full object-cover">
+          <img src="fishermen.jpg" alt="Chinese fishing nets at sunset in Fort Kochi" loading="lazy" class="pimg h-full w-full object-cover">
         </div>
         <figcaption class="small-caps text-paper/60 mt-4">Plate II — The cheena vala at low tide</figcaption>
       </figure>
@@ -460,7 +474,7 @@
     <!-- Featured: Munnar -->
     <article class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-stretch mb-24 reveal">
       <div class="md:col-span-7 overflow-hidden" style="min-height:400px">
-        <img src="village-canoe.jpg" alt="Misty morning on a Kerala backwater village" loading="lazy" class="h-full w-full object-cover">
+        <img id="dest-feat-img" src="village-canoe.jpg" alt="Misty morning on a Kerala backwater village" loading="lazy" class="w-full object-cover" style="height:115%;margin-top:-7.5%;will-change:transform">
       </div>
       <div class="md:col-span-5 flex flex-col justify-between bg-mist/50 p-10 md:p-12">
         <div>
@@ -639,7 +653,7 @@
 <footer class="relative bg-night text-paper/80 px-6 md:px-12 py-20">
   <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-12 gap-10 items-start">
     <div class="col-span-2 md:col-span-5">
-      <p class="font-display text-3xl text-paper">Keralaway<span class="text-brass">.</span></p>
+      <img src="logo.jpeg" alt="Keralaway" class="h-10 w-auto object-contain mb-4" style="filter:brightness(0) invert(1)">
       <p class="font-display italic text-paper/60 mt-3 max-w-sm">
         A slower way to experience Kerala — designed by hand, in Fort Kochi.
       </p>
@@ -675,50 +689,178 @@
 </footer>
 
 <script>
-  /* ── Scroll: progress bar + nav + hero parallax ── */
-  const progressBar = document.getElementById('progress-bar');
-  const nav         = document.getElementById('nav');
-  const navLogo     = document.getElementById('nav-logo');
-  const navLinks    = document.getElementById('nav-links');
-  const navCta      = document.getElementById('nav-cta');
+  /* ════════════════════════════════════════════
+     KERALAWAY — Scroll & Parallax Engine
+  ════════════════════════════════════════════ */
+
+  const progressBar  = document.getElementById('progress-bar');
+  const nav          = document.getElementById('nav');
+  const navLogoImg   = document.getElementById('nav-logo-img');
+  const navLinks     = document.getElementById('nav-links');
+  const navCta       = document.getElementById('nav-cta');
   const heroParallax = document.getElementById('hero-parallax');
   const heroContent  = document.getElementById('hero-content');
+  const cultureBg    = document.getElementById('culture-bg');
+  const foodImg      = document.getElementById('food-img');
+  const destFeatImg  = document.getElementById('dest-feat-img');
 
+  /* ── Mouse state ── */
+  let mx = 0, my = 0;
+  document.addEventListener('mousemove', e => {
+    mx = (e.clientX / window.innerWidth  - 0.5);
+    my = (e.clientY / window.innerHeight - 0.5);
+  }, { passive: true });
+
+  /* ── Per-element inner-image parallax helper ── */
+  function imgParallax(img, maxPx) {
+    if (!img) return;
+    const rect = img.closest('[style*="overflow"]')?.getBoundingClientRect()
+              || img.parentElement.getBoundingClientRect();
+    const center  = rect.top + rect.height / 2;
+    const range   = window.innerHeight / 2 + rect.height / 2;
+    const offset  = ((center - window.innerHeight / 2) / range) * maxPx;
+    img.style.transform = `translate3d(0, ${offset}px, 0)`;
+  }
+
+  /* ── Main scroll / RAF loop ── */
+  let ticking = false;
   function onScroll() {
+    if (!ticking) { requestAnimationFrame(tick); ticking = true; }
+  }
+
+  function tick() {
+    ticking = false;
     const y = window.scrollY;
 
-    // Progress bar
+    /* Progress bar */
     const max = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
 
-    // Nav appearance
+    /* ── Nav ── */
     const scrolled = y > 60;
+    nav.style.transition    = 'padding 0.7s ease, background 0.7s ease, border-color 0.7s ease';
     nav.style.paddingTop    = scrolled ? '12px' : '24px';
     nav.style.paddingBottom = scrolled ? '12px' : '24px';
-    nav.style.backdropFilter = scrolled ? 'blur(12px)' : '';
-    nav.style.borderBottom  = scrolled ? '1px solid rgba(0,0,0,0.08)' : '';
-    nav.style.background    = scrolled ? 'color-mix(in oklch, var(--color-paper) 70%, transparent)' : 'transparent';
-    navLogo.style.color     = scrolled ? 'var(--color-ink)'   : 'var(--color-paper)';
-    navLinks.style.color    = scrolled ? 'color-mix(in oklch, var(--color-ink) 80%, transparent)' : 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
-    navCta.style.borderColor = scrolled ? 'color-mix(in oklch, var(--color-ink) 40%, transparent)' : 'color-mix(in oklch, var(--color-paper) 60%, transparent)';
-    navCta.style.color      = scrolled ? 'var(--color-ink)'   : 'var(--color-paper)';
+    nav.style.backdropFilter = scrolled ? 'blur(14px) saturate(180%)' : '';
+    nav.style.borderBottom  = scrolled ? '1px solid rgba(0,0,0,0.07)' : '';
+    nav.style.background    = scrolled
+      ? 'color-mix(in oklch, var(--color-paper) 75%, transparent)'
+      : 'transparent';
+    navLogoImg.style.filter = scrolled ? '' : 'brightness(0) invert(1)';
+    navLinks.style.color    = scrolled
+      ? 'color-mix(in oklch, var(--color-ink) 80%, transparent)'
+      : 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
+    navCta.style.borderColor = scrolled
+      ? 'color-mix(in oklch, var(--color-ink) 40%, transparent)'
+      : 'color-mix(in oklch, var(--color-paper) 60%, transparent)';
+    navCta.style.color      = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
 
-    // Hero parallax
-    if (heroParallax) heroParallax.style.transform = `translate3d(0,${y * 0.35}px,0)`;
-    if (heroContent) {
-      heroContent.style.transform = `translate3d(0,${y * 0.15}px,0)`;
-      heroContent.style.opacity   = Math.max(0, 1 - y / 700);
+    /* ── Hero parallax (scroll + subtle mouse drift) ── */
+    const driftX = mx * 18;
+    const driftY = my * 12;
+    if (heroParallax) {
+      heroParallax.style.transform =
+        `translate3d(${driftX * 0.45}px, ${y * 0.38 + driftY * 0.3}px, 0)`;
     }
+    if (heroContent) {
+      heroContent.style.transform =
+        `translate3d(${-driftX * 0.15}px, ${y * 0.14}px, 0)`;
+      heroContent.style.opacity = Math.max(0, 1 - y / 680);
+    }
+
+    /* ── Culture background slow float ── */
+    if (cultureBg) {
+      const cRect = document.getElementById('culture-section').getBoundingClientRect();
+      const cOff  = (cRect.top / window.innerHeight) * 80;
+      cultureBg.style.transform = `translate3d(0, ${cOff}px, 0) scale(1.12)`;
+    }
+
+    /* ── Food image parallax ── */
+    imgParallax(foodImg, 35);
+
+    /* ── Featured destination image parallax ── */
+    imgParallax(destFeatImg, 45);
+
+    /* ── Chapter images inner parallax ── */
+    document.querySelectorAll('.pimg').forEach(img => {
+      const rect   = img.parentElement.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const range  = window.innerHeight / 2 + rect.height / 2;
+      const offset = ((center - window.innerHeight / 2) / range) * 44;
+      img.style.transform = `translate3d(0, ${offset}px, 0) scale(1.1)`;
+    });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  /* also run on mouse move so hero drifts with cursor even without scrolling */
+  document.addEventListener('mousemove', () => onScroll(), { passive: true });
   onScroll();
 
-  /* ── Reveal on scroll ── */
+  /* ── Reveal on scroll (IntersectionObserver) ── */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ── Culture section: dramatic clip-path sweep entrance ── */
+  const cultureSection = document.getElementById('culture-section');
+  if (cultureSection) {
+    const cultureInner = cultureSection.querySelector('.relative.px-6');
+    if (cultureInner) {
+      cultureInner.style.cssText +=
+        'clip-path:inset(0 0 100% 0);transition:clip-path 1.4s cubic-bezier(0.22,1,0.36,1);';
+      const cultureObs = new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) {
+          cultureInner.style.clipPath = 'inset(0 0 0% 0)';
+          cultureObs.disconnect();
+        }
+      }, { threshold: 0.05 });
+      cultureObs.observe(cultureSection);
+    }
+  }
+
+  /* ── Hero title: letter-by-letter entrance ── */
+  const heroH1 = document.getElementById('hero-h1');
+  if (heroH1) {
+    const text = heroH1.textContent.trim();
+    heroH1.innerHTML = Array.from(text).map((ch, i) =>
+      `<span class="hero-letter" style="display:inline-block;opacity:0;transform:translateY(40px) rotate(${(Math.random()-0.5)*4}deg);transition:opacity 0.7s ${120+i*38}ms ease,transform 0.9s ${120+i*38}ms cubic-bezier(0.2,0.8,0.2,1)">${ch === ' ' ? '&nbsp;' : ch}</span>`
+    ).join('');
+    /* trigger after a short paint delay */
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      heroH1.querySelectorAll('.hero-letter').forEach(s => {
+        s.style.opacity   = '1';
+        s.style.transform = 'translateY(0) rotate(0deg)';
+      });
+    }));
+  }
+
+  /* ── Seasons cards: staggered scale-in ── */
+  const seasonCards = document.querySelectorAll('#seasons .grid > div');
+  seasonCards.forEach((card, i) => {
+    card.style.cssText += `opacity:0;transform:translateY(40px);transition:opacity 1s ${i*180}ms ease,transform 1.1s ${i*180}ms cubic-bezier(0.2,0.8,0.2,1);`;
+  });
+  const seasonsObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      seasonCards.forEach(c => { c.style.opacity='1'; c.style.transform='translateY(0)'; });
+      seasonsObs.disconnect();
+    }
+  }, { threshold: 0.15 });
+  const seasonsGrid = document.querySelector('#seasons .grid');
+  if (seasonsGrid) seasonsObs.observe(seasonsGrid);
+
+  /* ── Horizontal text drift on section headings ── */
+  const driftHeadings = document.querySelectorAll('h2.editorial-headline');
+  function updateDrift() {
+    driftHeadings.forEach(h => {
+      const rect  = h.getBoundingClientRect();
+      const rel   = (rect.top + rect.height / 2) / window.innerHeight - 0.5;
+      const drift = rel * -18;
+      h.style.transform = `translate3d(${drift}px, 0, 0)`;
+    });
+  }
+  window.addEventListener('scroll', updateDrift, { passive: true });
+  updateDrift();
 
   /* ── Contact questionnaire ── */
   const cAnswers = {};
