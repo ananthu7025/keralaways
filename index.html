@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keralaway — A slower way to experience Kerala</title>
-  <meta name="description" content="Bespoke journeys through mist-covered tea hills, ancient ritual, quiet backwaters and food shared with locals.">
-  <meta property="og:title" content="Keralaway — A slower way to experience Kerala">
-  <meta property="og:description" content="Bespoke journeys through mist-covered tea hills, ancient ritual, quiet backwaters and food shared with locals.">
+  <title>Keralaway — Thoughtfully curated journeys</title>
+  <meta name="description"
+    content="Bespoke journeys through mist-covered tea hills, ancient ritual, quiet backwaters and food shared with locals.">
+  <meta property="og:title" content="Keralaway — Thoughtfully curated journeys">
+  <meta property="og:description"
+    content="Bespoke journeys through mist-covered tea hills, ancient ritual, quiet backwaters and food shared with locals.">
   <meta property="og:image" content="hero-backwaters.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap"
+    rel="stylesheet">
 
   <!-- Plain CSS companion -->
   <link rel="stylesheet" href="styles.css">
@@ -41,989 +46,1221 @@
     }
   </style>
 </head>
+
 <body class="bg-paper text-ink overflow-x-hidden">
 
-<!-- ── SCROLL PROGRESS ── -->
-<div class="fixed inset-x-0 top-0 z-[60] h-[2px] bg-transparent pointer-events-none">
-  <div id="progress-bar" class="h-full bg-brass transition-[width] duration-150 ease-out" style="width:0%"></div>
-</div>
+  <!-- ── SCROLL PROGRESS ── -->
+  <div class="fixed inset-x-0 top-0 z-[60] h-[2px] bg-transparent pointer-events-none">
+    <div id="progress-bar" class="h-full bg-brass transition-[width] duration-150 ease-out" style="width:0%"></div>
+  </div>
 
-<!-- ── NAV ── -->
-<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-700 py-6">
-  <div class="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-12">
-    <a href="index.html#top" id="nav-logo" class="flex items-center transition-all duration-700 text-paper hover:text-brass" aria-label="Keralaway Home">
-      <svg id="nav-logo-img" class="h-9 w-auto fill-current transition-colors duration-700" viewBox="0 0 160 36">
-        <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
-      </svg>
-    </a>
-    <nav id="nav-links" class="hidden md:flex items-center gap-10 small-caps text-paper/85 transition-colors">
-      <a href="index.html#story"   class="hover:text-brass transition-colors">The Story</a>
-      <a href="index.html#journeys" class="hover:text-brass transition-colors">Journeys</a>
-      <a href="index.html#seasons" class="hover:text-brass transition-colors">Seasons</a>
-      <a href="index.html#food"    class="hover:text-brass transition-colors">Food</a>
-      <a href="index.html#journal" class="hover:text-brass transition-colors">Journal</a>
-      <a href="about.html"        class="hover:text-brass transition-colors">About</a>
-    </nav>
-    <div class="flex items-center gap-6">
-      <a href="contact.html" id="nav-cta" class="small-caps border px-4 py-2 transition-all border-paper/60 text-paper hover:bg-paper hover:text-ink">
-        Begin a Journey
-      </a>
-      <button id="mobile-menu-btn" class="block md:hidden text-paper hover:text-brass focus:outline-none transition-colors duration-700 z-50" aria-label="Toggle Navigation">
-        <svg class="h-6 w-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-          <line id="bar-top" x1="4" y1="6" x2="20" y2="6" class="transition-transform duration-300 origin-center"></line>
-          <line id="bar-mid" x1="4" y1="12" x2="20" y2="12" class="transition-opacity duration-300"></line>
-          <line id="bar-bot" x1="4" y1="18" x2="20" y2="18" class="transition-transform duration-300 origin-center"></line>
+  <!-- ── NAV ── -->
+  <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-700 py-6">
+    <div class="mx-auto flex max-w-[1500px] items-center justify-between px-6 md:px-12">
+      <a href="index.html#top" id="nav-logo"
+        class="flex items-center transition-all duration-700 text-paper hover:text-brass" aria-label="Keralaway Home">
+        <svg id="nav-logo-img" class="h-9 w-auto fill-current transition-colors duration-700" viewBox="0 0 160 36">
+          <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28"
+            letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
         </svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- ── MOBILE MENU OVERLAY ── -->
-<div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-night text-paper translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
-  <div class="flex flex-col gap-12 mt-24">
-    <nav class="flex flex-col gap-6 text-3xl font-display font-light">
-      <a href="index.html#story" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">The Story</a>
-      <a href="index.html#journeys" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journeys</a>
-      <a href="index.html#seasons" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Seasons</a>
-      <a href="index.html#food" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Food Notes</a>
-      <a href="index.html#journal" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journal</a>
-      <a href="about.html" class="hover:text-brass transition-colors">About Studio</a>
-    </nav>
-  </div>
-  <div class="flex flex-col gap-6">
-    <a href="contact.html" class="small-caps border border-paper/60 text-center py-4 text-paper hover:bg-paper hover:text-night transition-colors text-lg">
-      Begin a Journey
-    </a>
-    <div class="text-paper/40 small-caps text-xs flex justify-between">
-      <span>Fort Kochi, Kerala</span>
-      <span>Vol. I · MMXXVI</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- ── HERO ── -->
-<section id="top" class="relative h-screen min-h-[720px] w-full overflow-hidden bg-night">
-  <div id="hero-parallax" class="absolute inset-0 will-change-transform">
-    <img
-      src="hero-backwaters.jpg"
-      alt="Dawn mist rising over Kerala backwaters with a single houseboat"
-      class="ken-burns h-full w-full object-cover"
-      width="1920" height="1280"
-    >
-    <div class="absolute inset-0 bg-gradient-to-b from-night/40 via-transparent to-night/70"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-night/30 via-transparent to-transparent"></div>
-  </div>
-
-  <div id="hero-content" class="relative z-10 flex h-full flex-col justify-between px-6 md:px-12 py-32 md:py-24">
-    <div></div>
-    <div class="max-w-3xl">
-      <p class="small-caps text-paper/70 mb-6">— Est. in the mist of Munnar</p>
-      <h1 id="hero-h1" class="editorial-headline text-paper" style="font-size: clamp(72px, 9.5vw, 140px); line-height: 0.85;">
-        Keralaway
-      </h1>
-      <p class="mt-8 font-display italic text-paper/85 text-2xl md:text-3xl max-w-xl leading-snug">
-        A slower way to experience Kerala.
-      </p>
-    </div>
-    <div class="flex items-end justify-between gap-6">
-      <div class="text-paper/60 small-caps">N 9.9°  ·  E 76.3°</div>
-      <div class="flex flex-col items-center gap-3 text-paper/70">
-        <div class="h-12 w-px bg-paper/40 animate-pulse"></div>
-        <span class="small-caps" style="font-size:0.65rem">Scroll Slowly</span>
-      </div>
-      <div class="text-paper/60 small-caps hidden md:block">Vol. I  ·  MMXXVI</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── OPENING STORY ── -->
-<section id="story" class="relative py-32 md:py-48 px-6 md:px-12">
-  <div class="mx-auto grid max-w-[1400px] grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
-
-    <div class="md:col-span-5 md:col-start-1 reveal">
-      <div class="relative overflow-hidden" style="aspect-ratio:3/4">
-        <img
-          src="tea-portrait.jpg"
-          alt="A tea worker in the misty hills of Munnar"
-          loading="lazy" width="1024" height="1408"
-          class="h-full w-full object-cover"
-        >
-      </div>
-      <p class="font-hand text-spice text-xl mt-4" style="transform:rotate(-1deg)">
-        — Lakshmi, 26 years on the Munnar slopes
-      </p>
-    </div>
-
-    <div class="md:col-span-6 md:col-start-7 reveal">
-      <p class="small-caps text-spice mb-8">Chapter One — The Invitation</p>
-      <h2 class="editorial-headline text-ink text-5xl md:text-7xl mb-10">
-        Some places are <em class="editorial-italic">visited</em>.
-        <br>Kerala is <em class="editorial-italic">experienced</em>.
-      </h2>
-      <div class="font-display text-xl md:text-2xl leading-relaxed text-ink/80 space-y-6 max-w-xl">
-        <p>
-          Through mist-covered tea hills, centuries-old traditions, quiet backwaters and meals
-          shared with strangers who become family — every journey here unfolds slowly.
-        </p>
-        <p class="text-ink/60 text-lg italic">
-          We don't sell tours. We design afternoons, mornings, and small unrepeatable moments.
-        </p>
-      </div>
-      <div class="rule-divider mt-12 w-24"></div>
-      <p class="small-caps mt-6 text-ink/60">A studio of nine, based in Fort Kochi.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── MARQUEE STRIP ── -->
-<div class="overflow-hidden border-t border-b border-ink/10 py-[14px] bg-ink select-none" aria-hidden="true">
-  <div class="marquee-track flex items-center gap-0" style="width:max-content">
-    <span class="flex items-center gap-10 pr-10 small-caps text-paper/50" style="font-size:0.68rem">
-      <span>Alleppey</span><span class="text-brass">·</span><span>Munnar</span><span class="text-brass">·</span><span>Wayanad</span><span class="text-brass">·</span><span>Theyyam</span><span class="text-brass">·</span><span>Varkala</span><span class="text-brass">·</span><span>Kathakali</span><span class="text-brass">·</span><span>Fort Kochi</span><span class="text-brass">·</span><span>Kalaripayattu</span><span class="text-brass">·</span><span>Backwaters</span><span class="text-brass">·</span><span>Ayurveda</span><span class="text-brass">·</span><span>Monsoon</span><span class="text-brass">·</span><span>Malabar</span><span class="text-brass">·</span><span>Palakkad</span><span class="text-brass">·</span><span>Kettuvallam</span><span class="text-brass">·</span>
-    </span>
-    <span class="flex items-center gap-10 pr-10 small-caps text-paper/50" style="font-size:0.68rem">
-      <span>Alleppey</span><span class="text-brass">·</span><span>Munnar</span><span class="text-brass">·</span><span>Wayanad</span><span class="text-brass">·</span><span>Theyyam</span><span class="text-brass">·</span><span>Varkala</span><span class="text-brass">·</span><span>Kathakali</span><span class="text-brass">·</span><span>Fort Kochi</span><span class="text-brass">·</span><span>Kalaripayattu</span><span class="text-brass">·</span><span>Backwaters</span><span class="text-brass">·</span><span>Ayurveda</span><span class="text-brass">·</span><span>Monsoon</span><span class="text-brass">·</span><span>Malabar</span><span class="text-brass">·</span><span>Palakkad</span><span class="text-brass">·</span><span>Kettuvallam</span><span class="text-brass">·</span>
-    </span>
-  </div>
-</div>
-
-<!-- ── JOURNEY COLLECTIONS ── -->
-<section id="journeys" class="relative bg-mist/40 py-24 md:py-32">
-  <div class="px-6 md:px-12 mb-20">
-    <div class="mx-auto max-w-[1400px] flex flex-wrap items-end justify-between gap-6">
-      <div>
-        <p class="small-caps text-spice mb-4">Volume Two</p>
-        <h2 class="editorial-headline text-ink text-5xl md:text-7xl max-w-3xl">
-          Journey <em class="editorial-italic">Collections</em>
-        </h2>
-      </div>
-      <p class="font-display italic text-ink/60 text-lg max-w-xs">
-        Not tours. Chapters — each written for one traveller, once.
-      </p>
-    </div>
-  </div>
-
-  <div class="flex flex-col">
-
-    <!-- Curated Packages Header -->
-    <div class="mx-auto max-w-[1400px] w-full px-6 md:px-12 pt-8 pb-4">
-      <div class="flex items-baseline gap-4 mb-8">
-        <span class="small-caps text-spice text-sm tracking-widest font-medium">Part I &mdash; Curated Packages</span>
-        <div class="flex-1 h-[1px] bg-ink/15"></div>
-      </div>
-    </div>
-
-    <!-- Chapter I — image right -->
-    <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
-      <div class="md:col-span-7 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="houseboat-dusk.jpg" alt="Romantic Escapes" loading="lazy" width="1600" height="1000"
-            class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Best experienced October — February</p>
-        </div>
-      </div>
-      <div class="md:col-span-4 md:col-start-9 reveal">
-        <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. I</span>
-          <div class="flex-1 h-px bg-ink/30"></div>
-        </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Romantic Escapes</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kochi &bull; Munnar &bull; Kumarakom</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Mist-covered tea hills, cascading waterfalls, and quiet lakeside serenity. A private sundowner overlooking the hills and sunset cruises on Kumarakom's backwaters.</p>
-        <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
-          <a href="journey-romantic-escapes.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Chapter II — image left -->
-    <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30 border-b border-ink/10">
-      <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="ayurveda.jpg" alt="Wellness & Ayurveda Retreat" loading="lazy" width="1600" height="1000"
-            class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Begin during monsoon for deepest benefit</p>
-        </div>
-      </div>
-      <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
-        <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. II</span>
-          <div class="flex-1 h-px bg-ink/30"></div>
-        </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Wellness &amp; Ayurveda Retreat</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kumarakom &bull; Varkala</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Rejuvenation and deep healing. Personalized Ayurvedic therapies, daily yoga, and organic wellness cuisine in Kumarakom and along Varkala's red cliffs.</p>
-        <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">8 Days / 7 Nights</span>
-          <a href="journey-wellness-ayurveda.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Chapter III — image right -->
-    <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
-      <div class="md:col-span-7 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="village-canoe.jpg" alt="Family Private Journeys" loading="lazy" width="1600" height="1000"
-            class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Perfect for multi-generational families</p>
-        </div>
-      </div>
-      <div class="md:col-span-4 md:col-start-9 reveal">
-        <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. III</span>
-          <div class="flex-1 h-px bg-ink/30"></div>
-        </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Family Private Journeys</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kochi &bull; Munnar &bull; Thekkady &bull; Kumarakom</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">A private journey for loved ones. Nature walks through tea estates, interactive spice discovery sessions, boat safaris in Thekkady, and village backwater cruises.</p>
-        <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">6 Days / 5 Nights</span>
-          <a href="journey-family-private-journeys.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Chapter IV — image left -->
-    <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30 border-b border-ink/10">
-      <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="kochi-street.jpg" alt="Kochi Stopovers" loading="lazy" width="1600" height="1000"
-            class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Local favourite — Princess Street at dawn</p>
-        </div>
-      </div>
-      <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
-        <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. IV</span>
-          <div class="flex-1 h-px bg-ink/30"></div>
-        </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Kochi Stopovers</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Fort Kochi &bull; Mattancherry &bull; Kochi</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Three slow days in the historic port. Walk colonial laneways, explore Jewish Town markets, watch Chinese fishing nets, and cruise the harbor at sunset.</p>
-        <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">3 Days / 2 Nights</span>
-          <a href="journey-kochi-stopovers.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- North Kerala Experiences Header -->
-    <div class="mx-auto max-w-[1400px] w-full px-6 md:px-12 pt-16 pb-4">
-      <div class="flex items-baseline gap-4 mb-8">
-        <span class="small-caps text-spice text-sm tracking-widest font-medium">Part II &mdash; North Kerala Experiences</span>
-        <div class="flex-1 h-[1px] bg-ink/15"></div>
-      </div>
-    </div>
-
-    <!-- Chapter V — image right -->
-    <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
-      <div class="md:col-span-7 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="theyyam.jpg" alt="Malabar Trails" loading="lazy" width="1600" height="1000"
-            class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl right-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Eight centuries, still moving</p>
-        </div>
-      </div>
-      <div class="md:col-span-4 md:col-start-9 reveal">
-        <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. I</span>
-          <div class="flex-1 h-px bg-ink/30"></div>
-        </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Malabar Trails</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kozhikode &bull; Paithalmala &bull; Payyannur &bull; Bekal &bull; Kannur</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Waterways and ancient rituals of North Kerala. Kayak through quiet mangroves, explore seaside Bekal Fort, and witness Theyyam and Parassinikadavu Muthappan Temple.</p>
-        <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
-          <a href="journey-malabar-trails.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Chapter VI — image left (last) -->
-    <article class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30">
-      <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:16/10">
-          <img src="nature-hero.jpg" alt="Wayanad Unscripted" loading="lazy" width="1600" height="1000"
-            class="pimg h-full w-full object-cover">
-          <p class="absolute font-hand text-paper text-xl left-6 bottom-6" style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Mist, coffee valleys, and forest canopy</p>
-        </div>
-      </div>
-      <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
-        <div class="flex items-baseline gap-4 mb-6">
-          <span class="font-display italic text-brass text-2xl">No. II</span>
-          <div class="flex-1 h-px bg-ink/30"></div>
-        </div>
-        <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Wayanad Unscripted</h3>
-        <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Wayanad Highlands</p>
-        <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Forest trails, tribal traditions, and countryside life in the Western Ghats. Explore hidden viewpoints in 900 Kandi, prehistoric rock art in Edakkal Caves, and farm-to-table culinary experiences.</p>
-        <div class="flex items-center justify-between max-w-md">
-          <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
-          <a href="journey-wayanad-unscripted.html" class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read this chapter &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ── SEASONS ── -->
-<section id="seasons" class="relative py-24 md:py-32 bg-paper">
-  <div class="px-6 md:px-12 mb-16">
-    <div class="mx-auto max-w-[1400px]">
-      <p class="small-caps text-spice mb-4">Volume Three</p>
-      <h2 class="editorial-headline text-ink text-5xl md:text-7xl">
-        Kerala, through the <em class="editorial-italic">seasons</em>
-      </h2>
-    </div>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-3">
-    <div class="relative flex flex-col justify-between p-10 md:p-12 border-t border-ink/10 md:border-t-0 reveal" style="min-height:70vh;background:linear-gradient(to bottom right,color-mix(in oklch,var(--color-brass) 30%,transparent),color-mix(in oklch,var(--color-coconut) 30%,transparent),var(--color-paper))">
-      <div>
-        <p class="small-caps text-spice mb-6">March — May</p>
-        <h3 class="editorial-headline text-ink text-5xl md:text-6xl mb-2">Summer.</h3>
-        <p class="font-display italic text-2xl text-spice">— Stillness</p>
-      </div>
-      <p class="font-display text-ink/80 text-lg leading-relaxed mt-12 max-w-xs">The state slows. Coastal afternoons spent in mango shade, dawn walks before the heat. The light is honey, the sea is silver.</p>
-    </div>
-    <div class="relative flex flex-col justify-between p-10 md:p-12 border-t border-ink/10 md:border-t-0 md:border-l border-ink/10 reveal" style="min-height:70vh;background:linear-gradient(to bottom right,color-mix(in oklch,var(--color-moss-deep) 30%,transparent),color-mix(in oklch,var(--color-moss) 20%,transparent),color-mix(in oklch,var(--color-mist) 40%,transparent))">
-      <div>
-        <p class="small-caps text-moss-deep mb-6">June — September</p>
-        <h3 class="editorial-headline text-ink text-5xl md:text-6xl mb-2">Monsoon.</h3>
-        <p class="font-display italic text-2xl text-moss-deep">— Awakening</p>
-      </div>
-      <p class="font-display text-ink/80 text-lg leading-relaxed mt-12 max-w-xs">The land exhales. Rivers fill, the green deepens to ink. Old healers say this is the only season worth being treated in. We agree.</p>
-    </div>
-    <div class="relative flex flex-col justify-between p-10 md:p-12 border-t border-ink/10 md:border-t-0 md:border-l border-ink/10 reveal" style="min-height:70vh;background:linear-gradient(to bottom right,color-mix(in oklch,var(--color-stone) 30%,transparent),color-mix(in oklch,var(--color-mist) 40%,transparent),var(--color-paper))">
-      <div>
-        <p class="small-caps text-stone mb-6">October — February</p>
-        <h3 class="editorial-headline text-ink text-5xl md:text-6xl mb-2">Winter.</h3>
-        <p class="font-display italic text-2xl text-stone">— Clarity</p>
-      </div>
-      <p class="font-display text-ink/80 text-lg leading-relaxed mt-12 max-w-xs">Mornings cool enough for a shawl in Munnar. Festival lamps in every village. The backwaters are glass; the tea hills are sharp against the sky.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOD JOURNAL ── -->
-<section id="food" class="relative bg-coconut/30 py-24 md:py-32 px-6 md:px-12 overflow-hidden">
-  <div class="absolute inset-0 paper-grain pointer-events-none"></div>
-  <div class="relative mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
-
-    <div class="md:col-span-5 reveal">
-      <p class="small-caps text-spice mb-4">Field Notes</p>
-      <h2 class="editorial-headline text-ink text-5xl md:text-6xl mb-8">
-        From the <em class="editorial-italic">kitchen</em>, slowly.
-      </h2>
-      <p class="font-display text-ink/80 text-lg leading-relaxed mb-6">
-        Kerala's table is not one cuisine but three — written in coconut, tamarind, and the
-        unhurried hand of grandmothers.
-      </p>
-      <p class="font-hand text-spice text-2xl mt-8" style="transform:rotate(-1deg)">
-        "Cooking, like a temple, must take its time."
-      </p>
-      <p class="small-caps mt-2 text-ink/50">— overheard in a Travancore kitchen</p>
-    </div>
-
-    <div class="md:col-span-7 reveal">
-      <div class="overflow-hidden">
-        <img id="food-img" src="food-spices.jpg" alt="Kerala spices and ingredients on a banana leaf"
-          loading="lazy" width="1408" height="1024" class="w-full object-cover" style="height:110%;margin-top:-5%;will-change:transform">
-      </div>
-    </div>
-
-    <div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 reveal">
-      <div class="border-t border-ink/30 pt-6">
-        <p class="small-caps text-spice mb-3">Pepper coast, biryani country</p>
-        <h4 class="font-display text-3xl text-ink mb-3">Malabar</h4>
-        <p class="text-ink/75 leading-relaxed">Where Arab dhows once moored. Slow-cooked meats, thalassery biryani, banana-leaf parottas torn by hand.</p>
-      </div>
-      <div class="border-t border-ink/30 pt-6">
-        <p class="small-caps text-spice mb-3">Coconut, tamarind, restraint</p>
-        <h4 class="font-display text-3xl text-ink mb-3">Travancore</h4>
-        <p class="text-ink/75 leading-relaxed">The royal kitchen. Avial, olan, the precise sourness of kalan. Cooking that whispers, never shouts.</p>
-      </div>
-      <div class="border-t border-ink/30 pt-6">
-        <p class="small-caps text-spice mb-3">Backwater catch, daily rice</p>
-        <h4 class="font-display text-3xl text-ink mb-3">Central Kerala</h4>
-        <p class="text-ink/75 leading-relaxed">Karimeen on banana leaves. Toddy-shop fish curries. The simplest meal eaten with the most attention.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── CULTURE (dark) ── -->
-<section id="culture-section" class="relative bg-night text-paper py-32 md:py-44 overflow-hidden">
-  <div class="absolute inset-0">
-    <img id="culture-bg" src="temple-lamps.jpg" alt="Temple oil lamps at dusk" loading="lazy" width="1920" height="1024"
-      class="h-full w-full object-cover opacity-40" style="transform-origin:center;will-change:transform">
-    <div class="absolute inset-0 bg-gradient-to-b from-night via-night/70 to-night"></div>
-  </div>
-
-  <div class="relative px-6 md:px-12">
-    <div class="mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
-      <div class="md:col-span-6 reveal">
-        <p class="small-caps text-brass mb-6">A Room of Living Tradition</p>
-        <h2 class="editorial-headline text-paper text-6xl md:text-8xl">
-          The <em class="editorial-italic text-brass">sacred</em>,
-          <br>still <em class="editorial-italic">moving</em>.
-        </h2>
-      </div>
-      <div class="md:col-span-5 md:col-start-8 reveal">
-        <p class="font-display text-paper/80 text-xl leading-relaxed">
-          Theyyam. Kathakali. Kalaripayattu. Festivals of fire, oil, and brass that have not
-          paused in eight hundred years. We do not stage them. We sit beside them.
-        </p>
-      </div>
-    </div>
-
-    <div class="mx-auto max-w-[1400px] grid grid-cols-12 gap-6 mt-24">
-      <figure class="col-span-12 md:col-span-7 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:4/3">
-          <img src="theyyam.jpg" alt="A Theyyam performer being painted before dawn" loading="lazy" class="pimg h-full w-full object-cover">
-        </div>
-        <figcaption class="small-caps text-paper/60 mt-4">Plate I — Theyyam preparation, Kannur district, 04:12</figcaption>
-      </figure>
-      <figure class="col-span-12 md:col-span-4 md:col-start-9 md:mt-32 reveal">
-        <div class="relative overflow-hidden" style="aspect-ratio:3/4">
-          <img src="fishermen.jpg" alt="Chinese fishing nets at sunset in Fort Kochi" loading="lazy" class="pimg h-full w-full object-cover">
-        </div>
-        <figcaption class="small-caps text-paper/60 mt-4">Plate II — The cheena vala at low tide</figcaption>
-      </figure>
-    </div>
-
-    <div class="mx-auto max-w-[1400px] mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
-      <div class="border-t border-brass/40 pt-4"><p class="small-caps text-brass/70">No. 01</p><p class="font-display text-paper text-2xl mt-1">Theyyam</p></div>
-      <div class="border-t border-brass/40 pt-4"><p class="small-caps text-brass/70">No. 02</p><p class="font-display text-paper text-2xl mt-1">Kathakali</p></div>
-      <div class="border-t border-brass/40 pt-4"><p class="small-caps text-brass/70">No. 03</p><p class="font-display text-paper text-2xl mt-1">Kalaripayattu</p></div>
-      <div class="border-t border-brass/40 pt-4"><p class="small-caps text-brass/70">No. 04</p><p class="font-display text-paper text-2xl mt-1">Boat Races</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── DESTINATIONS ── -->
-<section class="relative py-24 md:py-32 px-6 md:px-12 bg-paper">
-  <div class="mx-auto max-w-[1400px]">
-
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16 items-end">
-      <div class="md:col-span-7 reveal">
-        <p class="small-caps text-spice mb-4">A Working Atlas</p>
-        <h2 class="editorial-headline text-ink text-5xl md:text-7xl">
-          Places we <em class="editorial-italic">return</em> to.
-        </h2>
-      </div>
-      <p class="md:col-span-4 md:col-start-9 font-display italic text-ink/60 text-lg reveal">
-        Munnar, Wayanad, Alleppey, Varkala, Thrissur — each a chapter of its own.
-      </p>
-    </div>
-
-    <!-- Featured: Munnar -->
-    <article class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-stretch mb-24 reveal">
-      <div class="md:col-span-7 overflow-hidden" style="min-height:400px">
-        <img id="dest-feat-img" src="village-canoe.jpg" alt="Misty morning on a Kerala backwater village" loading="lazy" class="w-full object-cover" style="height:115%;margin-top:-7.5%;will-change:transform">
-      </div>
-      <div class="md:col-span-5 flex flex-col justify-between bg-mist/50 p-10 md:p-12">
-        <div>
-          <p class="small-caps text-spice mb-4">Featured Destination</p>
-          <h3 class="editorial-headline text-ink text-6xl md:text-7xl mb-6">Munnar</h3>
-          <p class="font-display italic text-ink/70 text-xl mb-8 leading-snug">"To wake here is to wake inside a cloud."</p>
-          <p class="text-ink/75 leading-relaxed">
-            Twelve hundred metres above the coast, where the air smells of cardamom and the
-            hills turn from green to grey to gold between morning and noon. Stay in a bungalow
-            once owned by a Scottish planter; wake before the mist lifts.
-          </p>
-        </div>
-        <div class="mt-10 flex items-center justify-between">
-          <span class="small-caps text-ink/60">Idukki District · 1600m</span>
-          <a href="destination-munnar.html" class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">Plan a visit</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Smaller grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <article class="group reveal">
-        <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
-          <a href="destination-wayanad.html">
-            <img src="tea-portrait.jpg" alt="Wayanad" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
-          </a>
-        </div>
-        <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
-          <h4 class="font-display text-3xl text-ink"><a href="destination-wayanad.html" class="hover:text-brass transition-colors">Wayanad</a></h4>
-          <span class="font-display italic text-brass">No. 02</span>
-        </div>
-        <p class="small-caps text-ink/60 mt-3">Forest, coffee, silence</p>
-      </article>
-      <article class="group reveal" style="transition-delay:80ms">
-        <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
-          <a href="destination-varkala.html">
-            <img src="fishermen.jpg" alt="Varkala" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
-          </a>
-        </div>
-        <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
-          <h4 class="font-display text-3xl text-ink"><a href="destination-varkala.html" class="hover:text-brass transition-colors">Varkala</a></h4>
-          <span class="font-display italic text-brass">No. 03</span>
-        </div>
-        <p class="small-caps text-ink/60 mt-3">Cliffs above the Arabian Sea</p>
-      </article>
-      <article class="group reveal" style="transition-delay:160ms">
-        <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
-          <a href="destination-fort-kochi.html">
-            <img src="kochi-street.jpg" alt="Fort Kochi" loading="lazy" class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
-          </a>
-        </div>
-        <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
-          <h4 class="font-display text-3xl text-ink"><a href="destination-fort-kochi.html" class="hover:text-brass transition-colors">Fort Kochi</a></h4>
-          <span class="font-display italic text-brass">No. 04</span>
-        </div>
-        <p class="small-caps text-ink/60 mt-3">Spice, ink, and salt air</p>
-      </article>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── JOURNAL ── -->
-<section id="journal" class="relative bg-paper py-24 md:py-32 px-6 md:px-12 border-t border-ink/15">
-  <div class="mx-auto max-w-[1400px]">
-    <div class="flex flex-wrap items-end justify-between gap-6 mb-16">
-      <h2 class="editorial-headline text-ink text-5xl md:text-7xl reveal">The <em class="editorial-italic">Journal</em></h2>
-      <p class="small-caps text-ink/60 reveal">Issue 04 · Spring</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
-      <a href="blog-theyyam-dancers.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal">
-        <div class="flex-1">
-          <p class="small-caps text-spice mb-3">Photo Story</p>
-          <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">A morning with the Theyyam dancers of Kannur</h3>
-          <p class="font-display italic text-ink/60 mt-3">Aravind Menon · May 2026</p>
-        </div>
-        <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
       </a>
-      <a href="blog-best-meal.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:60ms">
-        <div class="flex-1">
-          <p class="small-caps text-spice mb-3">Food Chronicle</p>
-          <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">Why the best meal in Kerala is eaten standing up</h3>
-          <p class="font-display italic text-ink/60 mt-3">Anjali R. · April 2026</p>
-        </div>
-        <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
-      </a>
-      <a href="blog-houseboat-captain.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:120ms">
-        <div class="flex-1">
-          <p class="small-caps text-spice mb-3">Local Voice</p>
-          <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">Letters from a houseboat captain, second-generation</h3>
-          <p class="font-display italic text-ink/60 mt-3">Thomas K. · March 2026</p>
-        </div>
-        <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
-      </a>
-      <a href="blog-monsoon-medicine.html" class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal" style="transition-delay:180ms">
-        <div class="flex-1">
-          <p class="small-caps text-spice mb-3">Travel Essay</p>
-          <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">The monsoon as medicine — three weeks in Palakkad</h3>
-          <p class="font-display italic text-ink/60 mt-3">Dr. Saira George · February 2026</p>
-        </div>
-        <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT INVITATION ── -->
-<section id="contact" class="relative bg-moss-deep text-paper py-28 md:py-40 px-6 md:px-12 overflow-hidden">
-  <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brass/20 blur-3xl lamp-glow pointer-events-none"></div>
-  <div class="relative mx-auto max-w-[1100px]">
-    <p class="small-caps text-brass mb-6 reveal">An Invitation</p>
-    <h2 class="editorial-headline text-paper text-5xl md:text-7xl mb-10 max-w-3xl reveal">
-      Let's design your <em class="editorial-italic text-brass">Kerala</em> journey.
-    </h2>
-    <p class="font-display text-paper/80 text-xl max-w-2xl mb-16 reveal">
-      Tell us a little. We'll write back within a day — not with a brochure, but with a few
-      honest questions and the beginnings of a route only for you.
-    </p>
-
-    <div class="border-t border-paper/20 pt-12 max-w-3xl">
-
-      <!-- Step 1 -->
-      <div id="q-0" class="contact-step">
-        <p class="small-caps text-brass mb-6">Question 1 of 3</p>
-        <h3 class="font-display text-3xl md:text-4xl mb-10 leading-snug">What kind of traveller are you?</h3>
-        <div class="flex flex-wrap gap-3">
-          <button onclick="cNext(0,'type','Quiet wanderer')"    class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Quiet wanderer</button>
-          <button onclick="cNext(0,'type','Curious eater')"     class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Curious eater</button>
-          <button onclick="cNext(0,'type','Cultural seeker')"   class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Cultural seeker</button>
-          <button onclick="cNext(0,'type','Devoted slow soul')" class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Devoted slow soul</button>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div id="q-1" class="contact-step hidden">
-        <p class="small-caps text-brass mb-6">Question 2 of 3</p>
-        <h3 class="font-display text-3xl md:text-4xl mb-10 leading-snug">How many days do you have?</h3>
-        <div class="flex flex-wrap gap-3">
-          <button onclick="cNext(1,'days','4 — 6')"                class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">4 — 6</button>
-          <button onclick="cNext(1,'days','7 — 10')"               class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">7 — 10</button>
-          <button onclick="cNext(1,'days','10 — 14')"              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">10 — 14</button>
-          <button onclick="cNext(1,'days','More than two weeks')"  class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">More than two weeks</button>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div id="q-2" class="contact-step hidden">
-        <p class="small-caps text-brass mb-6">Question 3 of 3</p>
-        <h3 class="font-display text-3xl md:text-4xl mb-10 leading-snug">What pulls you most?</h3>
-        <div class="flex flex-wrap gap-3">
-          <button onclick="cNext(2,'interest','Culture')"      class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Culture</button>
-          <button onclick="cNext(2,'interest','Food')"         class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Food</button>
-          <button onclick="cNext(2,'interest','Nature')"       class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Nature</button>
-          <button onclick="cNext(2,'interest','Wellness')"     class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Wellness</button>
-          <button onclick="cNext(2,'interest','Adventure')"    class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Adventure</button>
-          <button onclick="cNext(2,'interest','Family Time')"  class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Family Time</button>
-        </div>
-      </div>
-
-      <!-- Done -->
-      <div id="q-done" class="contact-step hidden">
-        <p class="small-caps text-brass mb-6">Thank you</p>
-        <h3 id="q-summary" class="font-display text-3xl md:text-4xl mb-8 leading-snug max-w-2xl"></h3>
-        <form id="home-contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl">
-          <input type="hidden" name="traveler_type" id="form-type">
-          <input type="hidden" name="days" id="form-days">
-          <input type="hidden" name="interest" id="form-interest">
-          <input placeholder="Your name" name="name" required class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
-          <input placeholder="Your email" name="email" type="email" required class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
-          <button type="submit" class="md:col-span-2 mt-6 self-start small-caps border border-brass text-brass px-6 py-3 hover:bg-brass hover:text-night transition-colors cursor-pointer">
-            Send our way →
-          </button>
-        </form>
-        <button onclick="cReset()" class="small-caps text-paper/60 mt-8 underline underline-offset-4 hover:text-brass">
-          Start over
+      <nav id="nav-links" class="hidden md:flex items-center gap-10 small-caps text-paper/85 transition-colors">
+        <a href="index.html#story" class="hover:text-brass transition-colors">The Story</a>
+        <a href="index.html#journeys" class="hover:text-brass transition-colors">Journeys</a>
+        <a href="index.html#seasons" class="hover:text-brass transition-colors">Seasons</a>
+        <a href="index.html#food" class="hover:text-brass transition-colors">Food</a>
+        <a href="index.html#journal" class="hover:text-brass transition-colors">Journal</a>
+        <a href="about.html" class="hover:text-brass transition-colors">About</a>
+      </nav>
+      <div class="flex items-center gap-6">
+        <a href="contact.html" id="nav-cta"
+          class="small-caps border px-4 py-2 transition-all border-paper/60 text-paper hover:bg-paper hover:text-ink">
+          Begin a Journey
+        </a>
+        <button id="mobile-menu-btn"
+          class="block md:hidden text-paper hover:text-brass focus:outline-none transition-colors duration-700 z-50"
+          aria-label="Toggle Navigation">
+          <svg class="h-6 w-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+            <line id="bar-top" x1="4" y1="6" x2="20" y2="6" class="transition-transform duration-300 origin-center">
+            </line>
+            <line id="bar-mid" x1="4" y1="12" x2="20" y2="12" class="transition-opacity duration-300"></line>
+            <line id="bar-bot" x1="4" y1="18" x2="20" y2="18" class="transition-transform duration-300 origin-center">
+            </line>
+          </svg>
         </button>
       </div>
-
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ── FOOTER ── -->
-<footer class="relative bg-night text-paper/80 px-6 md:px-12 py-20">
-  <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-12 gap-10 items-start">
-    <div class="col-span-2 md:col-span-5">
-      <div class="flex items-center text-paper mb-4">
-        <svg class="h-10 w-auto fill-current" viewBox="0 0 160 36" aria-label="Keralaway logo">
-          <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28" letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
-        </svg>
+  <!-- ── MOBILE MENU OVERLAY ── -->
+  <div id="mobile-menu-overlay"
+    class="fixed inset-0 z-40 bg-night text-paper translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+    <div class="flex flex-col gap-12 mt-24">
+      <nav class="flex flex-col gap-6 text-3xl font-display font-light">
+        <a href="index.html#story" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">The Story</a>
+        <a href="index.html#journeys" onclick="toggleMobileMenu()"
+          class="hover:text-brass transition-colors">Journeys</a>
+        <a href="index.html#seasons" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Seasons</a>
+        <a href="index.html#food" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Food Notes</a>
+        <a href="index.html#journal" onclick="toggleMobileMenu()" class="hover:text-brass transition-colors">Journal</a>
+        <a href="about.html" class="hover:text-brass transition-colors">About Studio</a>
+      </nav>
+    </div>
+    <div class="flex flex-col gap-6">
+      <a href="contact.html"
+        class="small-caps border border-paper/60 text-center py-4 text-paper hover:bg-paper hover:text-night transition-colors text-lg">
+        Begin a Journey
+      </a>
+      <div class="text-paper/40 small-caps text-xs flex justify-between">
+        <span>Fort Kochi, Kerala</span>
+        <span>Vol. I · MMXXVI</span>
       </div>
-      <p class="font-display italic text-paper/60 mt-3 max-w-sm">
-        A slower way to experience Kerala — designed by hand, in Fort Kochi.
+    </div>
+  </div>
+
+
+  <!-- ── HERO ── -->
+  <section id="top" class="relative h-screen min-h-[720px] w-full overflow-hidden bg-night">
+    <div id="hero-parallax" class="absolute inset-0 will-change-transform">
+      <img src="hero-backwaters.jpg" alt="Dawn mist rising over Kerala backwaters with a single houseboat"
+        class="ken-burns h-full w-full object-cover" width="1920" height="1280">
+      <div class="absolute inset-0 bg-gradient-to-b from-night/40 via-transparent to-night/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-night/30 via-transparent to-transparent"></div>
+    </div>
+
+    <div id="hero-content" class="relative z-10 flex h-full flex-col justify-between px-6 md:px-12 py-32 md:py-24">
+      <div></div>
+      <div class="max-w-3xl">
+        <h1 id="hero-h1" class="editorial-headline text-paper"
+          style="font-size: clamp(72px, 9.5vw, 140px); line-height: 0.85;">
+          Keralaway
+        </h1>
+        <p class="mt-8 font-display italic text-paper/85 text-2xl md:text-3xl max-w-xl leading-snug">
+          Thoughtfully curated journeys.
+        </p>
+      </div>
+      <div class="flex items-end justify-between gap-6">
+        <div class="text-paper/60 small-caps">N 9.9° · E 76.3°</div>
+        <div class="flex flex-col items-center gap-3 text-paper/70">
+          <div class="h-12 w-px bg-paper/40 animate-pulse"></div>
+          <span class="small-caps" style="font-size:0.65rem">Scroll Slowly</span>
+        </div>
+        <div class="text-paper/60 small-caps hidden md:block">Vol. I · MMXXVI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OPENING STORY ── -->
+  <section id="story" class="relative py-32 md:py-48 px-6 md:px-12">
+    <div class="mx-auto grid max-w-[1400px] grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+
+      <div class="md:col-span-5 md:col-start-1 reveal">
+        <div class="relative overflow-hidden" style="aspect-ratio:3/4">
+          <img src="tea-portrait.jpg" alt="A tea worker in the misty hills of Munnar" loading="lazy" width="1024"
+            height="1408" class="h-full w-full object-cover">
+        </div>
+        <p class="font-hand text-spice text-xl mt-4" style="transform:rotate(-1deg)">
+          — Lakshmi, 26 years on the Munnar slopes
+        </p>
+      </div>
+
+      <div class="md:col-span-6 md:col-start-7 reveal">
+        <p class="small-caps text-spice mb-8">Chapter One — The Invitation</p>
+        <h2 class="editorial-headline text-ink text-5xl md:text-7xl mb-10">
+          Some places are <em class="editorial-italic">visited</em>.
+          <br>Kerala is <em class="editorial-italic">experienced</em>.
+        </h2>
+        <div class="font-display text-xl md:text-2xl leading-relaxed text-ink/80 space-y-6 max-w-xl">
+          <p>
+            Through mist-covered tea hills, centuries-old traditions, quiet backwaters and meals
+            shared with strangers who become family — every journey here unfolds slowly.
+          </p>
+          <p class="text-ink/60 text-lg italic">
+            We don't sell tours. We design afternoons, mornings, and small unrepeatable moments.
+          </p>
+        </div>
+        <div class="rule-divider mt-12 w-24"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── MARQUEE STRIP ── -->
+  <div class="overflow-hidden border-t border-b border-ink/10 py-[14px] bg-ink select-none" aria-hidden="true">
+    <div class="marquee-track flex items-center gap-0" style="width:max-content">
+      <span class="flex items-center gap-10 pr-10 small-caps text-paper/50" style="font-size:0.68rem">
+        <span>Alleppey</span><span class="text-brass">·</span><span>Munnar</span><span
+          class="text-brass">·</span><span>Wayanad</span><span class="text-brass">·</span><span>Theyyam</span><span
+          class="text-brass">·</span><span>Varkala</span><span class="text-brass">·</span><span>Kathakali</span><span
+          class="text-brass">·</span><span>Fort Kochi</span><span
+          class="text-brass">·</span><span>Kalaripayattu</span><span
+          class="text-brass">·</span><span>Backwaters</span><span class="text-brass">·</span><span>Ayurveda</span><span
+          class="text-brass">·</span><span>Monsoon</span><span class="text-brass">·</span><span>Malabar</span><span
+          class="text-brass">·</span><span>Palakkad</span><span class="text-brass">·</span><span>Kettuvallam</span><span
+          class="text-brass">·</span>
+      </span>
+      <span class="flex items-center gap-10 pr-10 small-caps text-paper/50" style="font-size:0.68rem">
+        <span>Alleppey</span><span class="text-brass">·</span><span>Munnar</span><span
+          class="text-brass">·</span><span>Wayanad</span><span class="text-brass">·</span><span>Theyyam</span><span
+          class="text-brass">·</span><span>Varkala</span><span class="text-brass">·</span><span>Kathakali</span><span
+          class="text-brass">·</span><span>Fort Kochi</span><span
+          class="text-brass">·</span><span>Kalaripayattu</span><span
+          class="text-brass">·</span><span>Backwaters</span><span class="text-brass">·</span><span>Ayurveda</span><span
+          class="text-brass">·</span><span>Monsoon</span><span class="text-brass">·</span><span>Malabar</span><span
+          class="text-brass">·</span><span>Palakkad</span><span class="text-brass">·</span><span>Kettuvallam</span><span
+          class="text-brass">·</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ── WHY TRAVEL WITH US ── -->
+  <section class="py-24 bg-paper px-6 md:px-12 border-b border-ink/10">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-start">
+        <div class="lg:col-span-5 reveal">
+          <p class="small-caps text-spice mb-4">Why Travel With Us</p>
+          <h2 class="editorial-headline text-ink text-5xl md:text-7xl leading-tight">
+            Meaningful journeys designed with local expertise, authenticity, and care.
+          </h2>
+        </div>
+        <div class="lg:col-span-6 lg:col-start-7 reveal">
+          <p class="font-display text-xl text-ink/75 leading-relaxed">
+            We believe travel should be slow, intentional, and deeply personal. Every detail of our private travel experiences is curated to reveal the true heart of Kerala.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+        <!-- Point 1 -->
+        <div class="border-t border-ink/20 pt-8 reveal">
+          <span class="font-display italic text-brass text-2xl">01</span>
+          <h3 class="font-display text-2xl text-ink mt-3 mb-4">Thoughtfully Curated Journeys</h3>
+          <p class="text-ink/70 leading-relaxed text-sm">Every itinerary is carefully designed to balance comfort, authenticity, and meaningful experiences, ensuring that no two journeys feel the same.</p>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="border-t border-ink/20 pt-8 reveal" style="transition-delay: 80ms">
+          <span class="font-display italic text-brass text-2xl">02</span>
+          <h3 class="font-display text-2xl text-ink mt-3 mb-4">Local Expertise</h3>
+          <p class="text-ink/70 leading-relaxed text-sm">Born and raised in Kerala, we combine local knowledge with tourism expertise to create journeys that go beyond the usual tourist trail.</p>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="border-t border-ink/20 pt-8 reveal" style="transition-delay: 160ms">
+          <span class="font-display italic text-brass text-2xl">03</span>
+          <h3 class="font-display text-2xl text-ink mt-3 mb-4">Handpicked Stays</h3>
+          <p class="text-ink/70 leading-relaxed text-sm">From boutique heritage hotels and forest retreats to premium wellness resorts, every stay is selected for its character, quality, and guest experience.</p>
+        </div>
+
+        <!-- Point 4 -->
+        <div class="border-t border-ink/20 pt-8 reveal">
+          <span class="font-display italic text-brass text-2xl">04</span>
+          <h3 class="font-display text-2xl text-ink mt-3 mb-4">Authentic Local Experiences</h3>
+          <p class="text-ink/70 leading-relaxed text-sm">From Theyyam and Muthappan traditions to tea plantations, spice trails, kayaking adventures, and village encounters, our experiences connect travelers with the real Kerala.</p>
+        </div>
+
+        <!-- Point 5 -->
+        <div class="border-t border-ink/20 pt-8 reveal" style="transition-delay: 80ms">
+          <span class="font-display italic text-brass text-2xl">05</span>
+          <h3 class="font-display text-2xl text-ink mt-3 mb-4">Seamless Private Travel</h3>
+          <p class="text-ink/70 leading-relaxed text-sm">From airport arrival to departure, we manage every detail with private transportation, dedicated support, and personalized service.</p>
+        </div>
+
+        <!-- Point 6 -->
+        <div class="border-t border-ink/20 pt-8 reveal" style="transition-delay: 160ms">
+          <span class="font-display italic text-brass text-2xl">06</span>
+          <h3 class="font-display text-2xl text-ink mt-3 mb-4">Private Travel with Purpose</h3>
+          <p class="text-ink/70 leading-relaxed text-sm">Our journeys are designed not only to showcase destinations but to create meaningful memories and genuine connections with Kerala's people, culture, and natural heritage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JOURNEY COLLECTIONS ── -->
+  <section id="journeys" class="relative bg-mist/40 py-24 md:py-32">
+    <div class="px-6 md:px-12 mb-20">
+      <div class="mx-auto max-w-[1400px] flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="small-caps text-spice mb-4">Volume Two</p>
+          <h2 class="editorial-headline text-ink text-5xl md:text-7xl max-w-3xl">
+            Journey <em class="editorial-italic">Collections</em>
+          </h2>
+        </div>
+        <p class="font-display italic text-ink/60 text-lg max-w-xs">
+          Not tours. Chapters — each written for one traveller, once.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+
+      <!-- Curated Packages Header -->
+      <div class="mx-auto max-w-[1400px] w-full px-6 md:px-12 pt-8 pb-4">
+        <div class="flex items-baseline gap-4 mb-8">
+          <span class="small-caps text-spice text-sm tracking-widest font-medium">Part I &mdash; Curated Packages</span>
+          <div class="flex-1 h-[1px] bg-ink/15"></div>
+        </div>
+      </div>
+
+      <!-- Chapter I — image right -->
+      <article
+        class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
+        <div class="md:col-span-7 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:16/10">
+            <img src="houseboat-dusk.jpg" alt="Romantic Escapes" loading="lazy" width="1600" height="1000"
+              class="pimg h-full w-full object-cover">
+            <p class="absolute font-hand text-paper text-xl right-6 bottom-6"
+              style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Best experienced October — February
+            </p>
+          </div>
+        </div>
+        <div class="md:col-span-4 md:col-start-9 reveal">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="font-display italic text-brass text-2xl">No. I</span>
+            <div class="flex-1 h-px bg-ink/30"></div>
+          </div>
+          <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Romantic Escapes</h3>
+          <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kochi &bull; Munnar &bull; Kumarakom</p>
+          <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Mist-covered tea hills, cascading waterfalls, and quiet
+            lakeside serenity. A private sundowner overlooking the hills and sunset cruises on Kumarakom's backwaters.
+          </p>
+          <div class="flex items-center justify-between max-w-md">
+            <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
+            <a href="journey-romantic-escapes.html"
+              class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read
+              this chapter &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chapter II — image left -->
+      <article
+        class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30 border-b border-ink/10">
+        <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:16/10">
+            <img src="ayurveda.jpg" alt="Wellness & Ayurveda Retreat" loading="lazy" width="1600" height="1000"
+              class="pimg h-full w-full object-cover">
+            <p class="absolute font-hand text-paper text-xl left-6 bottom-6"
+              style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Begin during monsoon for deepest
+              benefit</p>
+          </div>
+        </div>
+        <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="font-display italic text-brass text-2xl">No. II</span>
+            <div class="flex-1 h-px bg-ink/30"></div>
+          </div>
+          <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Wellness &amp; Ayurveda Retreat</h3>
+          <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kumarakom &bull; Varkala</p>
+          <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Rejuvenation and deep healing. Personalized Ayurvedic
+            therapies, daily yoga, and organic wellness cuisine in Kumarakom and along Varkala's red cliffs.</p>
+          <div class="flex items-center justify-between max-w-md">
+            <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
+            <a href="journey-wellness-ayurveda.html"
+              class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read
+              this chapter &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chapter III — image right -->
+      <article
+        class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
+        <div class="md:col-span-7 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:16/10">
+            <img src="village-canoe.jpg" alt="Family Private Journeys" loading="lazy" width="1600" height="1000"
+              class="pimg h-full w-full object-cover">
+            <p class="absolute font-hand text-paper text-xl right-6 bottom-6"
+              style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Perfect for multi-generational
+              families</p>
+          </div>
+        </div>
+        <div class="md:col-span-4 md:col-start-9 reveal">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="font-display italic text-brass text-2xl">No. III</span>
+            <div class="flex-1 h-px bg-ink/30"></div>
+          </div>
+          <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Family Private Journeys</h3>
+          <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kochi &bull; Munnar &bull; Thekkady
+            &bull; Kumarakom</p>
+          <p class="text-ink/75 leading-relaxed mb-8 max-w-md">A private journey for loved ones. Nature walks through
+            tea estates, interactive spice discovery sessions, boat safaris in Thekkady, and village backwater cruises.
+          </p>
+          <div class="flex items-center justify-between max-w-md">
+            <span class="small-caps text-ink/60">6 Days / 5 Nights</span>
+            <a href="journey-family-private-journeys.html"
+              class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read
+              this chapter &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chapter IV — image left -->
+      <article
+        class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30 border-b border-ink/10">
+        <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:16/10">
+            <img src="kochi-street.jpg" alt="Kochi Stopovers" loading="lazy" width="1600" height="1000"
+              class="pimg h-full w-full object-cover">
+            <p class="absolute font-hand text-paper text-xl left-6 bottom-6"
+              style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Local favourite — Princess Street
+              at dawn</p>
+          </div>
+        </div>
+        <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="font-display italic text-brass text-2xl">No. IV</span>
+            <div class="flex-1 h-px bg-ink/30"></div>
+          </div>
+          <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Kochi Stopovers</h3>
+          <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Fort Kochi &bull; Mattancherry &bull;
+            Kochi</p>
+          <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Three slow days in the historic port. Walk colonial
+            laneways, explore Jewish Town markets, watch Chinese fishing nets, and cruise the harbor at sunset.</p>
+          <div class="flex items-center justify-between max-w-md">
+            <span class="small-caps text-ink/60">3 Days / 2 Nights</span>
+            <a href="journey-kochi-stopovers.html"
+              class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read
+              this chapter &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- North Kerala Experiences Header -->
+      <div class="mx-auto max-w-[1400px] w-full px-6 md:px-12 pt-16 pb-4">
+        <div class="flex items-baseline gap-4 mb-8">
+          <span class="small-caps text-spice text-sm tracking-widest font-medium">Part II &mdash; North Kerala
+            Experiences</span>
+          <div class="flex-1 h-[1px] bg-ink/15"></div>
+        </div>
+      </div>
+
+      <!-- Chapter V — image right -->
+      <article
+        class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-paper border-b border-ink/10">
+        <div class="md:col-span-7 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:16/10">
+            <img src="theyyam.jpg" alt="Malabar Trails" loading="lazy" width="1600" height="1000"
+              class="pimg h-full w-full object-cover">
+            <p class="absolute font-hand text-paper text-xl right-6 bottom-6"
+              style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Eight centuries, still moving</p>
+          </div>
+        </div>
+        <div class="md:col-span-4 md:col-start-9 reveal">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="font-display italic text-brass text-2xl">No. I</span>
+            <div class="flex-1 h-px bg-ink/30"></div>
+          </div>
+          <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Malabar Trails</h3>
+          <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Kozhikode &bull; Paithalmala &bull;
+            Payyannur &bull; Bekal &bull; Kannur</p>
+          <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Waterways and ancient rituals of North Kerala. Kayak
+            through quiet mangroves, explore seaside Bekal Fort, and witness Theyyam and Parassinikadavu Muthappan
+            Temple.</p>
+          <div class="flex items-center justify-between max-w-md">
+            <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
+            <a href="journey-malabar-trails.html"
+              class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read
+              this chapter &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Chapter VI — image left (last) -->
+      <article
+        class="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center px-6 md:px-12 py-20 md:py-28 bg-mist/30">
+        <div class="md:col-span-7 md:order-2 md:col-start-6 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:16/10">
+            <img src="nature-hero.jpg" alt="Wayanad Unscripted" loading="lazy" width="1600" height="1000"
+              class="pimg h-full w-full object-cover">
+            <p class="absolute font-hand text-paper text-xl left-6 bottom-6"
+              style="transform:rotate(-3deg);text-shadow:0 2px 12px rgba(0,0,0,0.6)">Mist, coffee valleys, and forest
+              canopy</p>
+          </div>
+        </div>
+        <div class="md:col-span-4 md:order-1 md:col-start-2 reveal">
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="font-display italic text-brass text-2xl">No. II</span>
+            <div class="flex-1 h-px bg-ink/30"></div>
+          </div>
+          <h3 class="editorial-headline text-ink text-4xl md:text-5xl mb-5">Wayanad Unscripted</h3>
+          <p class="font-display italic text-ink/70 text-xl mb-6 leading-snug">Wayanad &bull; 900 Kandi</p>
+          <p class="text-ink/75 leading-relaxed mb-8 max-w-md">Forest trails, tribal traditions, and countryside life in
+            the Western Ghats. Explore hidden viewpoints in 900 Kandi, prehistoric rock art in Edakkal Caves, and
+            farm-to-table culinary experiences.</p>
+          <div class="flex items-center justify-between max-w-md">
+            <span class="small-caps text-ink/60">5 Days / 4 Nights</span>
+            <a href="journey-wayanad-unscripted.html"
+              class="small-caps text-ink border-b border-ink/40 hover:border-brass hover:text-brass transition-colors pb-1">Read
+              this chapter &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── SEASONS ── -->
+  <section id="seasons" class="relative py-24 md:py-32 bg-paper">
+    <div class="px-6 md:px-12 mb-16">
+      <div class="mx-auto max-w-[1400px]">
+        <p class="small-caps text-spice mb-4">Volume Three</p>
+        <h2 class="editorial-headline text-ink text-5xl md:text-7xl">
+          Kerala, through the <em class="editorial-italic">seasons</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      <div class="relative flex flex-col justify-between p-10 md:p-12 border-t border-ink/10 md:border-t-0 reveal"
+        style="min-height:70vh;background:linear-gradient(to bottom right,color-mix(in oklch,var(--color-brass) 30%,transparent),color-mix(in oklch,var(--color-coconut) 30%,transparent),var(--color-paper))">
+        <div>
+          <p class="small-caps text-spice mb-6">March — May</p>
+          <h3 class="editorial-headline text-ink text-5xl md:text-6xl mb-2">Summer.</h3>
+          <p class="font-display italic text-2xl text-spice">— Stillness</p>
+        </div>
+        <p class="font-display text-ink/80 text-lg leading-relaxed mt-12 max-w-xs">The state slows. Coastal afternoons
+          spent in mango shade, dawn walks before the heat. The light is honey, the sea is silver.</p>
+      </div>
+      <div
+        class="relative flex flex-col justify-between p-10 md:p-12 border-t border-ink/10 md:border-t-0 md:border-l border-ink/10 reveal"
+        style="min-height:70vh;background:linear-gradient(to bottom right,color-mix(in oklch,var(--color-moss-deep) 30%,transparent),color-mix(in oklch,var(--color-moss) 20%,transparent),color-mix(in oklch,var(--color-mist) 40%,transparent))">
+        <div>
+          <p class="small-caps text-moss-deep mb-6">June — September</p>
+          <h3 class="editorial-headline text-ink text-5xl md:text-6xl mb-2">Monsoon.</h3>
+          <p class="font-display italic text-2xl text-moss-deep">— Awakening</p>
+        </div>
+        <p class="font-display text-ink/80 text-lg leading-relaxed mt-12 max-w-xs">The land exhales. Rivers fill, the
+          green deepens to ink. Old healers say this is the only season worth being treated in. We agree.</p>
+      </div>
+      <div
+        class="relative flex flex-col justify-between p-10 md:p-12 border-t border-ink/10 md:border-t-0 md:border-l border-ink/10 reveal"
+        style="min-height:70vh;background:linear-gradient(to bottom right,color-mix(in oklch,var(--color-stone) 30%,transparent),color-mix(in oklch,var(--color-mist) 40%,transparent),var(--color-paper))">
+        <div>
+          <p class="small-caps text-stone mb-6">October — February</p>
+          <h3 class="editorial-headline text-ink text-5xl md:text-6xl mb-2">Winter.</h3>
+          <p class="font-display italic text-2xl text-stone">— Clarity</p>
+        </div>
+        <p class="font-display text-ink/80 text-lg leading-relaxed mt-12 max-w-xs">Mornings cool enough for a shawl in
+          Munnar. Festival lamps in every village. The backwaters are glass; the tea hills are sharp against the sky.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOD JOURNAL ── -->
+  <section id="food" class="relative bg-coconut/30 py-24 md:py-32 px-6 md:px-12 overflow-hidden">
+    <div class="absolute inset-0 paper-grain pointer-events-none"></div>
+    <div class="relative mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+
+      <div class="md:col-span-5 reveal">
+        <p class="small-caps text-spice mb-4">Field Notes</p>
+        <h2 class="editorial-headline text-ink text-5xl md:text-6xl mb-8">
+          From the <em class="editorial-italic">kitchen</em>, slowly.
+        </h2>
+        <p class="font-display text-ink/80 text-lg leading-relaxed mb-6">
+          Kerala's table is not one cuisine but three — written in coconut, tamarind, and the
+          unhurried hand of grandmothers.
+        </p>
+        <p class="font-hand text-spice text-2xl mt-8" style="transform:rotate(-1deg)">
+          "Cooking, like a temple, must take its time."
+        </p>
+        <p class="small-caps mt-2 text-ink/50 mb-8">— overheard in a Travancore kitchen</p>
+        <div class="border-t border-ink/20 pt-6">
+          <p class="text-ink/75 leading-relaxed text-sm">
+            At the center of every kitchen lies the spice chest — a fragrant map of the land. The green cardamom from Munnar’s high hills, the black pepper from Malabar’s coastal rain, and the wild ginger drying in courtyard suns. These raw spices are the alphabets with which our culinary stories are written.
+          </p>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 reveal">
+        <div class="overflow-hidden">
+          <img id="food-img" src="food-spices.jpg" alt="Kerala spices and ingredients on a banana leaf" loading="lazy"
+            width="1408" height="1024" class="w-full object-cover"
+            style="height:110%;margin-top:-5%;will-change:transform">
+        </div>
+      </div>
+
+      <div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 reveal">
+        <div class="border-t border-ink/30 pt-6">
+          <p class="small-caps text-spice mb-3">Pepper coast, biryani country</p>
+          <h4 class="font-display text-3xl text-ink mb-3">Malabar</h4>
+          <p class="text-ink/75 leading-relaxed">Where Arab dhows once moored. Slow-cooked meats, thalassery biryani,
+            banana-leaf parottas torn by hand.</p>
+        </div>
+        <div class="border-t border-ink/30 pt-6">
+          <p class="small-caps text-spice mb-3">Coconut, tamarind, restraint</p>
+          <h4 class="font-display text-3xl text-ink mb-3">Travancore</h4>
+          <p class="text-ink/75 leading-relaxed">The royal kitchen. Avial, olan, the precise sourness of kalan. Cooking
+            that whispers, never shouts.</p>
+        </div>
+        <div class="border-t border-ink/30 pt-6">
+          <p class="small-caps text-spice mb-3">Backwater catch, daily rice</p>
+          <h4 class="font-display text-3xl text-ink mb-3">Central Kerala</h4>
+          <p class="text-ink/75 leading-relaxed">Karimeen on banana leaves. Toddy-shop fish curries. The simplest meal
+            eaten with the most attention.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CULTURE (dark) ── -->
+  <section id="culture-section" class="relative bg-night text-paper py-32 md:py-44 overflow-hidden">
+    <div class="absolute inset-0">
+      <img id="culture-bg" src="temple-lamps.jpg" alt="Temple oil lamps at dusk" loading="lazy" width="1920"
+        height="1024" class="h-full w-full object-cover opacity-40"
+        style="transform-origin:center;will-change:transform">
+      <div class="absolute inset-0 bg-gradient-to-b from-night via-night/70 to-night"></div>
+    </div>
+
+    <div class="relative px-6 md:px-12">
+      <div class="mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
+        <div class="md:col-span-6 reveal">
+          <p class="small-caps text-brass mb-6">A Room of Living Tradition</p>
+          <h2 class="editorial-headline text-paper text-6xl md:text-8xl">
+            The <em class="editorial-italic text-brass">sacred</em>,
+            <br>still <em class="editorial-italic">moving</em>.
+          </h2>
+        </div>
+        <div class="md:col-span-5 md:col-start-8 reveal">
+          <p class="font-display text-paper/80 text-xl leading-relaxed">
+            Theyyam. Kathakali. Kalaripayattu. Festivals of fire, oil, and brass that have not
+            paused in eight hundred years. We do not stage them. We sit beside them.
+          </p>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-[1400px] grid grid-cols-12 gap-6 mt-24">
+        <figure class="col-span-12 md:col-span-7 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:4/3">
+            <img src="theyyam.jpg" alt="A Theyyam performer being painted before dawn" loading="lazy"
+              class="pimg h-full w-full object-cover">
+          </div>
+          <figcaption class="small-caps text-paper/60 mt-4">Plate I — Theyyam preparation, Kannur district, 04:12
+          </figcaption>
+        </figure>
+        <figure class="col-span-12 md:col-span-4 md:col-start-9 md:mt-32 reveal">
+          <div class="relative overflow-hidden" style="aspect-ratio:3/4">
+            <img src="fishermen.jpg" alt="Chinese fishing nets at sunset in Fort Kochi" loading="lazy"
+              class="pimg h-full w-full object-cover">
+          </div>
+          <figcaption class="small-caps text-paper/60 mt-4">Plate II — The cheena vala at low tide</figcaption>
+        </figure>
+      </div>
+
+      <div class="mx-auto max-w-[1400px] mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+        <div class="border-t border-brass/40 pt-4">
+          <p class="small-caps text-brass/70">No. 01</p>
+          <p class="font-display text-paper text-2xl mt-1">Theyyam</p>
+        </div>
+        <div class="border-t border-brass/40 pt-4">
+          <p class="small-caps text-brass/70">No. 02</p>
+          <p class="font-display text-paper text-2xl mt-1">Kathakali</p>
+        </div>
+        <div class="border-t border-brass/40 pt-4">
+          <p class="small-caps text-brass/70">No. 03</p>
+          <p class="font-display text-paper text-2xl mt-1">Kalaripayattu</p>
+        </div>
+        <div class="border-t border-brass/40 pt-4">
+          <p class="small-caps text-brass/70">No. 04</p>
+          <p class="font-display text-paper text-2xl mt-1">Boat Races</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DESTINATIONS ── -->
+  <section class="relative py-24 md:py-32 px-6 md:px-12 bg-paper">
+    <div class="mx-auto max-w-[1400px]">
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16 items-end">
+        <div class="md:col-span-7 reveal">
+          <p class="small-caps text-spice mb-4">A Working Atlas</p>
+          <h2 class="editorial-headline text-ink text-5xl md:text-7xl">
+            Places we <em class="editorial-italic">return</em> to.
+          </h2>
+        </div>
+        <p class="md:col-span-4 md:col-start-9 font-display italic text-ink/60 text-lg reveal">
+          Munnar, Wayanad, Alleppey, Varkala, Thrissur — each a chapter of its own.
+        </p>
+      </div>
+
+      <!-- Featured: Munnar -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-stretch mb-24 reveal">
+        <div class="md:col-span-7 overflow-hidden" style="min-height:400px">
+          <img id="dest-feat-img" src="village-canoe.jpg" alt="Misty morning on a Kerala backwater village"
+            loading="lazy" class="w-full object-cover" style="height:115%;margin-top:-7.5%;will-change:transform">
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-between bg-mist/50 p-10 md:p-12">
+          <div>
+            <p class="small-caps text-spice mb-4">Featured Destination</p>
+            <h3 class="editorial-headline text-ink text-6xl md:text-7xl mb-6">Munnar</h3>
+            <p class="font-display italic text-ink/70 text-xl mb-8 leading-snug">"To wake here is to wake inside a
+              cloud."</p>
+            <p class="text-ink/75 leading-relaxed">
+              Twelve hundred metres above the coast, where the air smells of cardamom and the
+              hills turn from green to grey to gold between morning and noon. Stay in a bungalow
+              once owned by a Scottish planter; wake before the mist lifts.
+            </p>
+          </div>
+          <div class="mt-10 flex items-center justify-between">
+            <span class="small-caps text-ink/60">Idukki District · 1600m</span>
+            <a href="destination-munnar.html"
+              class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">Plan
+              a visit</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Smaller grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <article class="group reveal">
+          <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
+            <a href="destination-wayanad.html">
+              <img src="tea-portrait.jpg" alt="Wayanad" loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+            </a>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
+            <h4 class="font-display text-3xl text-ink"><a href="destination-wayanad.html"
+                class="hover:text-brass transition-colors">Wayanad</a></h4>
+            <span class="font-display italic text-brass">No. 02</span>
+          </div>
+          <p class="small-caps text-ink/60 mt-3">Forest, coffee, silence</p>
+        </article>
+        <article class="group reveal" style="transition-delay:80ms">
+          <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
+            <a href="destination-varkala.html">
+              <img src="fishermen.jpg" alt="Varkala" loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+            </a>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
+            <h4 class="font-display text-3xl text-ink"><a href="destination-varkala.html"
+                class="hover:text-brass transition-colors">Varkala</a></h4>
+            <span class="font-display italic text-brass">No. 03</span>
+          </div>
+          <p class="small-caps text-ink/60 mt-3">Cliffs above the Arabian Sea</p>
+        </article>
+        <article class="group reveal" style="transition-delay:160ms">
+          <div class="relative overflow-hidden mb-5" style="aspect-ratio:4/5">
+            <a href="destination-fort-kochi.html">
+              <img src="kochi-street.jpg" alt="Fort Kochi" loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-[1800ms] group-hover:scale-105">
+            </a>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-ink/30 pb-3">
+            <h4 class="font-display text-3xl text-ink"><a href="destination-fort-kochi.html"
+                class="hover:text-brass transition-colors">Fort Kochi</a></h4>
+            <span class="font-display italic text-brass">No. 04</span>
+          </div>
+          <p class="small-caps text-ink/60 mt-3">Spice, ink, and salt air</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── JOURNAL ── -->
+  <section id="journal" class="relative bg-paper py-24 md:py-32 px-6 md:px-12 border-t border-ink/15">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-16">
+        <h2 class="editorial-headline text-ink text-5xl md:text-7xl reveal">The <em
+            class="editorial-italic">Journal</em></h2>
+        <p class="small-caps text-ink/60 reveal">Issue 04 · Spring</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
+        <a href="blog-theyyam-dancers.html"
+          class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal">
+          <div class="flex-1">
+            <p class="small-caps text-spice mb-3">Photo Story</p>
+            <h3
+              class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">
+              A morning with the Theyyam dancers of Kannur</h3>
+            <p class="font-display italic text-ink/60 mt-3">Aravind Menon · May 2026</p>
+          </div>
+          <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
+        </a>
+        <a href="blog-best-meal.html"
+          class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal"
+          style="transition-delay:60ms">
+          <div class="flex-1">
+            <p class="small-caps text-spice mb-3">Food Chronicle</p>
+            <h3
+              class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">
+              Why the best meal in Kerala is eaten standing up</h3>
+            <p class="font-display italic text-ink/60 mt-3">Anjali R. · April 2026</p>
+          </div>
+          <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
+        </a>
+        <a href="blog-houseboat-captain.html"
+          class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal"
+          style="transition-delay:120ms">
+          <div class="flex-1">
+            <p class="small-caps text-spice mb-3">Local Voice</p>
+            <h3
+              class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">
+              Letters from a houseboat captain, second-generation</h3>
+            <p class="font-display italic text-ink/60 mt-3">Thomas K. · March 2026</p>
+          </div>
+          <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
+        </a>
+        <a href="blog-monsoon-medicine.html"
+          class="group flex items-baseline justify-between gap-6 border-t border-ink/30 py-8 hover:bg-mist/30 transition-colors reveal"
+          style="transition-delay:180ms">
+          <div class="flex-1">
+            <p class="small-caps text-spice mb-3">Travel Essay</p>
+            <h3
+              class="font-display text-2xl md:text-3xl text-ink leading-tight group-hover:text-brass transition-colors">
+              The monsoon as medicine — three weeks in Palakkad</h3>
+            <p class="font-display italic text-ink/60 mt-3">Dr. Saira George · February 2026</p>
+          </div>
+          <span class="small-caps text-ink/40 group-hover:text-brass transition-colors hidden md:inline">Read →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT INVITATION ── -->
+  <section id="contact" class="relative bg-moss-deep text-paper py-28 md:py-40 px-6 md:px-12 overflow-hidden">
+    <div
+      class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brass/20 blur-3xl lamp-glow pointer-events-none">
+    </div>
+    <div class="relative mx-auto max-w-[1100px]">
+      <p class="small-caps text-brass mb-6 reveal">An Invitation</p>
+      <h2 class="editorial-headline text-paper text-5xl md:text-7xl mb-10 max-w-3xl reveal">
+        Let's design your <em class="editorial-italic text-brass">Kerala</em> journey.
+      </h2>
+      <p class="font-display text-paper/80 text-xl max-w-2xl mb-16 reveal">
+        Tell us a little. We'll write back within a day — not with a brochure, but with a few
+        honest questions and the beginnings of a route only for you.
+        <span class="block mt-4 text-sm font-sans text-brass/90 small-caps tracking-wider">
+          Or reach out directly:
+          <a href="tel:+919292125237" class="underline hover:text-paper transition-colors font-semibold">+91
+            9292125237</a> &bull;
+          <a href="https://wa.me/919292125237" target="_blank"
+            class="underline hover:text-paper transition-colors font-semibold">WhatsApp</a> &bull;
+          <a href="mailto:info@keralaway.com"
+            class="underline hover:text-paper transition-colors font-semibold">info@keralaway.com</a>
+        </span>
       </p>
+
+      <div class="border-t border-paper/20 pt-12 max-w-3xl">
+
+        <!-- Step 1 -->
+        <div id="q-0" class="contact-step">
+          <p class="small-caps text-brass mb-6">Question 1 of 3</p>
+          <h3 class="font-display text-3xl md:text-4xl mb-10 leading-snug">What kind of traveller are you?</h3>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="cNext(0,'type','Quiet wanderer')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Quiet
+              wanderer</button>
+            <button onclick="cNext(0,'type','Curious eater')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Curious
+              eater</button>
+            <button onclick="cNext(0,'type','Cultural seeker')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Cultural
+              seeker</button>
+            <button onclick="cNext(0,'type','Devoted slow soul')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Devoted
+              slow soul</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="q-1" class="contact-step hidden">
+          <p class="small-caps text-brass mb-6">Question 2 of 3</p>
+          <h3 class="font-display text-3xl md:text-4xl mb-10 leading-snug">How many days do you have?</h3>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="cNext(1,'days','4 — 6')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">4
+              — 6</button>
+            <button onclick="cNext(1,'days','7 — 10')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">7
+              — 10</button>
+            <button onclick="cNext(1,'days','10 — 14')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">10
+              — 14</button>
+            <button onclick="cNext(1,'days','More than two weeks')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">More
+              than two weeks</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="q-2" class="contact-step hidden">
+          <p class="small-caps text-brass mb-6">Question 3 of 3</p>
+          <h3 class="font-display text-3xl md:text-4xl mb-10 leading-snug">What pulls you most?</h3>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="cNext(2,'interest','Culture')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Culture</button>
+            <button onclick="cNext(2,'interest','Food')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Food</button>
+            <button onclick="cNext(2,'interest','Nature')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Nature</button>
+            <button onclick="cNext(2,'interest','Wellness')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Wellness</button>
+            <button onclick="cNext(2,'interest','Adventure')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Adventure</button>
+            <button onclick="cNext(2,'interest','Family Time')"
+              class="border border-paper/40 px-5 py-3 font-display text-lg hover:bg-paper hover:text-moss-deep transition-colors">Family
+              Time</button>
+          </div>
+        </div>
+
+        <!-- Done -->
+        <div id="q-done" class="contact-step hidden">
+          <p class="small-caps text-brass mb-6">Thank you</p>
+          <h3 id="q-summary" class="font-display text-3xl md:text-4xl mb-8 leading-snug max-w-2xl"></h3>
+          <form id="home-contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl">
+            <input type="hidden" name="traveler_type" id="form-type">
+            <input type="hidden" name="days" id="form-days">
+            <input type="hidden" name="interest" id="form-interest">
+            <input placeholder="Your name" name="name" required
+              class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
+            <input placeholder="Your email" name="email" type="email" required
+              class="bg-transparent border-b border-paper/40 py-3 placeholder:text-paper/50 focus:outline-none focus:border-brass font-display text-lg">
+            <button type="submit"
+              class="md:col-span-2 mt-6 self-start small-caps border border-brass text-brass px-6 py-3 hover:bg-brass hover:text-night transition-colors cursor-pointer">
+              Send our way →
+            </button>
+          </form>
+          <button onclick="cReset()"
+            class="small-caps text-paper/60 mt-8 underline underline-offset-4 hover:text-brass">
+            Start over
+          </button>
+        </div>
+
+      </div>
     </div>
-    <div class="md:col-span-2">
-      <p class="small-caps text-brass mb-4">Studio</p>
-      <ul class="space-y-2 font-display">
-        <li>Fort Kochi, 682001</li>
-        <li>Kerala, India</li>
-      </ul>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="relative bg-night text-paper/80 px-6 md:px-12 py-20">
+    <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-12 gap-10 items-start">
+      <div class="col-span-2 md:col-span-5">
+        <div class="flex items-center text-paper mb-4">
+          <svg class="h-10 w-auto fill-current" viewBox="0 0 160 36" aria-label="Keralaway logo">
+            <text x="0" y="27" font-family="'Fraunces', Georgia, serif" font-weight="300" font-size="28"
+              letter-spacing="-0.02em" fill="currentColor">Keralaway</text>
+          </svg>
+        </div>
+        <p class="font-display italic text-paper/60 mt-3 max-w-sm">
+          Thoughtfully curated journeys — designed by hand, in Fort Kochi.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <p class="small-caps text-brass mb-4">Studio</p>
+        <ul class="space-y-2 font-display text-sm">
+          <li>Fort Kochi, 682001</li>
+          <li>Kerala, India</li>
+          <li class="pt-2"><a href="tel:+919292125237" class="hover:text-brass transition-colors">+91 9292125237</a>
+          </li>
+          <li><a href="https://wa.me/919292125237" target="_blank" class="hover:text-brass transition-colors">WhatsApp
+              Chat</a></li>
+          <li><a href="mailto:info@keralaway.com" class="hover:text-brass transition-colors">info@keralaway.com</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <p class="small-caps text-brass mb-4">Read</p>
+        <ul class="space-y-2 font-display">
+          <li><a href="#journal" class="hover:text-brass transition-colors">Journal</a></li>
+          <li><a href="#seasons" class="hover:text-brass transition-colors">Seasons</a></li>
+          <li><a href="#food" class="hover:text-brass transition-colors">Food Notes</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-3">
+        <p class="small-caps text-brass mb-4">Letters</p>
+        <p class="font-display text-paper/70 mb-4 text-sm">A quiet monthly note. No promotions.</p>
+        <form class="flex border-b border-paper/30" onsubmit="return false">
+          <input placeholder="your@email"
+            class="flex-1 bg-transparent py-2 focus:outline-none placeholder:text-paper/40 font-display">
+          <button class="small-caps text-brass px-2">Subscribe</button>
+        </form>
+      </div>
     </div>
-    <div class="md:col-span-2">
-      <p class="small-caps text-brass mb-4">Read</p>
-      <ul class="space-y-2 font-display">
-        <li><a href="#journal"  class="hover:text-brass transition-colors">Journal</a></li>
-        <li><a href="#seasons"  class="hover:text-brass transition-colors">Seasons</a></li>
-        <li><a href="#food"     class="hover:text-brass transition-colors">Food Notes</a></li>
-      </ul>
+    <div
+      class="mx-auto max-w-[1400px] mt-16 pt-8 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4 small-caps text-paper/50">
+      <span>© MMXXVI Keralaway Tours</span>
+      <span class="font-hand text-brass text-lg" style="text-transform:none;letter-spacing:normal">written slowly, in
+        Kerala</span>
     </div>
-    <div class="md:col-span-3">
-      <p class="small-caps text-brass mb-4">Letters</p>
-      <p class="font-display text-paper/70 mb-4 text-sm">A quiet monthly note. No promotions.</p>
-      <form class="flex border-b border-paper/30" onsubmit="return false">
-        <input placeholder="your@email" class="flex-1 bg-transparent py-2 focus:outline-none placeholder:text-paper/40 font-display">
-        <button class="small-caps text-brass px-2">Subscribe</button>
-      </form>
-    </div>
-  </div>
-  <div class="mx-auto max-w-[1400px] mt-16 pt-8 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4 small-caps text-paper/50">
-    <span>© MMXXVI Keralaway Tours</span>
-    <span class="font-hand text-brass text-lg" style="text-transform:none;letter-spacing:normal">written slowly, in Kerala</span>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  /* ════════════════════════════════════════════
-     KERALAWAY — Scroll & Parallax Engine
-  ════════════════════════════════════════════ */
+  <script>
+    /* ════════════════════════════════════════════
+       KERALAWAY — Scroll & Parallax Engine
+    ════════════════════════════════════════════ */
 
-  const progressBar  = document.getElementById('progress-bar');
-  const nav          = document.getElementById('nav');
-  const navLogoImg   = document.getElementById('nav-logo-img');
-  const navLinks     = document.getElementById('nav-links');
-  const navCta       = document.getElementById('nav-cta');
-  const heroParallax = document.getElementById('hero-parallax');
-  const heroContent  = document.getElementById('hero-content');
-  const cultureBg    = document.getElementById('culture-bg');
-  const foodImg      = document.getElementById('food-img');
-  const destFeatImg  = document.getElementById('dest-feat-img');
+    const progressBar = document.getElementById('progress-bar');
+    const nav = document.getElementById('nav');
+    const navLogoImg = document.getElementById('nav-logo-img');
+    const navLinks = document.getElementById('nav-links');
+    const navCta = document.getElementById('nav-cta');
+    const heroParallax = document.getElementById('hero-parallax');
+    const heroContent = document.getElementById('hero-content');
+    const cultureBg = document.getElementById('culture-bg');
+    const foodImg = document.getElementById('food-img');
+    const destFeatImg = document.getElementById('dest-feat-img');
 
-  /* ── Mouse state ── */
-  let mx = 0, my = 0;
-  document.addEventListener('mousemove', e => {
-    mx = (e.clientX / window.innerWidth  - 0.5);
-    my = (e.clientY / window.innerHeight - 0.5);
-  }, { passive: true });
+    /* ── Mouse state ── */
+    let mx = 0, my = 0;
+    document.addEventListener('mousemove', e => {
+      mx = (e.clientX / window.innerWidth - 0.5);
+      my = (e.clientY / window.innerHeight - 0.5);
+    }, { passive: true });
 
-  /* ── Per-element inner-image parallax helper ── */
-  function imgParallax(img, maxPx) {
-    if (!img) return;
-    const rect = img.closest('[style*="overflow"]')?.getBoundingClientRect()
-              || img.parentElement.getBoundingClientRect();
-    const center  = rect.top + rect.height / 2;
-    const range   = window.innerHeight / 2 + rect.height / 2;
-    const offset  = ((center - window.innerHeight / 2) / range) * maxPx;
-    img.style.transform = `translate3d(0, ${offset}px, 0)`;
-  }
-
-  /* ── Main scroll / RAF loop ── */
-  let ticking = false;
-  function onScroll() {
-    if (!ticking) { requestAnimationFrame(tick); ticking = true; }
-  }
-
-  function tick() {
-    ticking = false;
-    const y = window.scrollY;
-
-    /* Progress bar */
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    progressBar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
-
-    /* ── Nav ── */
-    const scrolled = y > 60;
-    nav.style.transition    = 'padding 0.7s ease, background 0.7s ease, border-color 0.7s ease';
-    nav.style.paddingTop    = scrolled ? '12px' : '24px';
-    nav.style.paddingBottom = scrolled ? '12px' : '24px';
-    nav.style.backdropFilter = scrolled ? 'blur(14px) saturate(180%)' : '';
-    nav.style.borderBottom  = scrolled ? '1px solid rgba(0,0,0,0.07)' : '';
-    nav.style.background    = scrolled
-      ? 'color-mix(in oklch, var(--color-paper) 75%, transparent)'
-      : 'transparent';
-    navLogoImg.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
-    navLinks.style.color    = scrolled
-      ? 'color-mix(in oklch, var(--color-ink) 80%, transparent)'
-      : 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
-    navCta.style.borderColor = scrolled
-      ? 'color-mix(in oklch, var(--color-ink) 40%, transparent)'
-      : 'color-mix(in oklch, var(--color-paper) 60%, transparent)';
-    navCta.style.color      = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
-    const mBtn = document.getElementById('mobile-menu-btn');
-    if (mBtn) {
-      mBtn.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
-    }
-
-    /* ── Hero parallax (scroll + subtle mouse drift) ── */
-    const driftX = mx * 18;
-    const driftY = my * 12;
-    if (heroParallax) {
-      heroParallax.style.transform =
-        `translate3d(${driftX * 0.45}px, ${y * 0.38 + driftY * 0.3}px, 0)`;
-    }
-    if (heroContent) {
-      heroContent.style.transform =
-        `translate3d(${-driftX * 0.15}px, ${y * 0.14}px, 0)`;
-      heroContent.style.opacity = Math.max(0, 1 - y / 680);
-    }
-
-    /* ── Culture background slow float ── */
-    if (cultureBg) {
-      const cRect = document.getElementById('culture-section').getBoundingClientRect();
-      const cOff  = (cRect.top / window.innerHeight) * 80;
-      cultureBg.style.transform = `translate3d(0, ${cOff}px, 0) scale(1.12)`;
-    }
-
-    /* ── Food image parallax ── */
-    imgParallax(foodImg, 35);
-
-    /* ── Featured destination image parallax ── */
-    imgParallax(destFeatImg, 45);
-
-    /* ── Chapter images inner parallax ── */
-    document.querySelectorAll('.pimg').forEach(img => {
-      const rect   = img.parentElement.getBoundingClientRect();
+    /* ── Per-element inner-image parallax helper ── */
+    function imgParallax(img, maxPx) {
+      if (!img) return;
+      const rect = img.closest('[style*="overflow"]')?.getBoundingClientRect()
+        || img.parentElement.getBoundingClientRect();
       const center = rect.top + rect.height / 2;
-      const range  = window.innerHeight / 2 + rect.height / 2;
-      const offset = ((center - window.innerHeight / 2) / range) * 44;
-      img.style.transform = `translate3d(0, ${offset}px, 0) scale(1.1)`;
-    });
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  /* also run on mouse move so hero drifts with cursor even without scrolling */
-  document.addEventListener('mousemove', () => onScroll(), { passive: true });
-  onScroll();
-
-  /* ── Reveal on scroll (IntersectionObserver) ── */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  /* ── Culture section: dramatic clip-path sweep entrance ── */
-  const cultureSection = document.getElementById('culture-section');
-  if (cultureSection) {
-    const cultureInner = cultureSection.querySelector('.relative.px-6');
-    if (cultureInner) {
-      cultureInner.style.cssText +=
-        'clip-path:inset(0 0 100% 0);transition:clip-path 1.4s cubic-bezier(0.22,1,0.36,1);';
-      const cultureObs = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) {
-          cultureInner.style.clipPath = 'inset(0 0 0% 0)';
-          cultureObs.disconnect();
-        }
-      }, { threshold: 0.05 });
-      cultureObs.observe(cultureSection);
+      const range = window.innerHeight / 2 + rect.height / 2;
+      const offset = ((center - window.innerHeight / 2) / range) * maxPx;
+      img.style.transform = `translate3d(0, ${offset}px, 0)`;
     }
-  }
 
-  /* ── Hero title: letter-by-letter entrance ── */
-  const heroH1 = document.getElementById('hero-h1');
-  if (heroH1) {
-    const text = heroH1.textContent.trim();
-    heroH1.innerHTML = Array.from(text).map((ch, i) =>
-      `<span class="hero-letter" style="display:inline-block;opacity:0;transform:translateY(40px) rotate(${(Math.random()-0.5)*4}deg);transition:opacity 0.7s ${120+i*38}ms ease,transform 0.9s ${120+i*38}ms cubic-bezier(0.2,0.8,0.2,1)">${ch === ' ' ? '&nbsp;' : ch}</span>`
-    ).join('');
-    /* trigger after a short paint delay */
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      heroH1.querySelectorAll('.hero-letter').forEach(s => {
-        s.style.opacity   = '1';
-        s.style.transform = 'translateY(0) rotate(0deg)';
+    /* ── Main scroll / RAF loop ── */
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) { requestAnimationFrame(tick); ticking = true; }
+    }
+
+    function tick() {
+      ticking = false;
+      const y = window.scrollY;
+
+      /* Progress bar */
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+
+      /* ── Nav ── */
+      const scrolled = y > 60;
+      nav.style.transition = 'padding 0.7s ease, background 0.7s ease, border-color 0.7s ease';
+      nav.style.paddingTop = scrolled ? '12px' : '24px';
+      nav.style.paddingBottom = scrolled ? '12px' : '24px';
+      nav.style.backdropFilter = scrolled ? 'blur(14px) saturate(180%)' : '';
+      nav.style.borderBottom = scrolled ? '1px solid rgba(0,0,0,0.07)' : '';
+      nav.style.background = scrolled
+        ? 'color-mix(in oklch, var(--color-paper) 75%, transparent)'
+        : 'transparent';
+      navLogoImg.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+      navLinks.style.color = scrolled
+        ? 'color-mix(in oklch, var(--color-ink) 80%, transparent)'
+        : 'color-mix(in oklch, var(--color-paper) 85%, transparent)';
+      navCta.style.borderColor = scrolled
+        ? 'color-mix(in oklch, var(--color-ink) 40%, transparent)'
+        : 'color-mix(in oklch, var(--color-paper) 60%, transparent)';
+      navCta.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+      const mBtn = document.getElementById('mobile-menu-btn');
+      if (mBtn) {
+        mBtn.style.color = scrolled ? 'var(--color-ink)' : 'var(--color-paper)';
+      }
+
+      /* ── Hero parallax (scroll + subtle mouse drift) ── */
+      const driftX = mx * 18;
+      const driftY = my * 12;
+      if (heroParallax) {
+        heroParallax.style.transform =
+          `translate3d(${driftX * 0.45}px, ${y * 0.38 + driftY * 0.3}px, 0)`;
+      }
+      if (heroContent) {
+        heroContent.style.transform =
+          `translate3d(${-driftX * 0.15}px, ${y * 0.14}px, 0)`;
+        heroContent.style.opacity = Math.max(0, 1 - y / 680);
+      }
+
+      /* ── Culture background slow float ── */
+      if (cultureBg) {
+        const cRect = document.getElementById('culture-section').getBoundingClientRect();
+        const cOff = (cRect.top / window.innerHeight) * 80;
+        cultureBg.style.transform = `translate3d(0, ${cOff}px, 0) scale(1.12)`;
+      }
+
+      /* ── Food image parallax ── */
+      imgParallax(foodImg, 35);
+
+      /* ── Featured destination image parallax ── */
+      imgParallax(destFeatImg, 45);
+
+      /* ── Chapter images inner parallax ── */
+      document.querySelectorAll('.pimg').forEach(img => {
+        const rect = img.parentElement.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const range = window.innerHeight / 2 + rect.height / 2;
+        const offset = ((center - window.innerHeight / 2) / range) * 44;
+        img.style.transform = `translate3d(0, ${offset}px, 0) scale(1.1)`;
       });
-    }));
-  }
-
-  /* ── Seasons cards: staggered scale-in ── */
-  const seasonCards = document.querySelectorAll('#seasons .grid > div');
-  seasonCards.forEach((card, i) => {
-    card.style.cssText += `opacity:0;transform:translateY(40px);transition:opacity 1s ${i*180}ms ease,transform 1.1s ${i*180}ms cubic-bezier(0.2,0.8,0.2,1);`;
-  });
-  const seasonsObs = new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) {
-      seasonCards.forEach(c => { c.style.opacity='1'; c.style.transform='translateY(0)'; });
-      seasonsObs.disconnect();
     }
-  }, { threshold: 0.15 });
-  const seasonsGrid = document.querySelector('#seasons .grid');
-  if (seasonsGrid) seasonsObs.observe(seasonsGrid);
 
-  /* ── Horizontal text drift on section headings ── */
-  const driftHeadings = document.querySelectorAll('h2.editorial-headline');
-  function updateDrift() {
-    driftHeadings.forEach(h => {
-      const rect  = h.getBoundingClientRect();
-      const rel   = (rect.top + rect.height / 2) / window.innerHeight - 0.5;
-      const drift = rel * -18;
-      h.style.transform = `translate3d(${drift}px, 0, 0)`;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    /* also run on mouse move so hero drifts with cursor even without scrolling */
+    document.addEventListener('mousemove', () => onScroll(), { passive: true });
+    onScroll();
+
+    /* ── Reveal on scroll (IntersectionObserver) ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ── Culture section: dramatic clip-path sweep entrance ── */
+    const cultureSection = document.getElementById('culture-section');
+    if (cultureSection) {
+      const cultureInner = cultureSection.querySelector('.relative.px-6');
+      if (cultureInner) {
+        cultureInner.style.cssText +=
+          'clip-path:inset(0 0 100% 0);transition:clip-path 1.4s cubic-bezier(0.22,1,0.36,1);';
+        const cultureObs = new IntersectionObserver(([e]) => {
+          if (e.isIntersecting) {
+            cultureInner.style.clipPath = 'inset(0 0 0% 0)';
+            cultureObs.disconnect();
+          }
+        }, { threshold: 0.05 });
+        cultureObs.observe(cultureSection);
+      }
+    }
+
+    /* ── Hero title: letter-by-letter entrance ── */
+    const heroH1 = document.getElementById('hero-h1');
+    if (heroH1) {
+      const text = heroH1.textContent.trim();
+      heroH1.innerHTML = Array.from(text).map((ch, i) =>
+        `<span class="hero-letter" style="display:inline-block;opacity:0;transform:translateY(40px) rotate(${(Math.random() - 0.5) * 4}deg);transition:opacity 0.7s ${120 + i * 38}ms ease,transform 0.9s ${120 + i * 38}ms cubic-bezier(0.2,0.8,0.2,1)">${ch === ' ' ? '&nbsp;' : ch}</span>`
+      ).join('');
+      /* trigger after a short paint delay */
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        heroH1.querySelectorAll('.hero-letter').forEach(s => {
+          s.style.opacity = '1';
+          s.style.transform = 'translateY(0) rotate(0deg)';
+        });
+      }));
+    }
+
+    /* ── Seasons cards: staggered scale-in ── */
+    const seasonCards = document.querySelectorAll('#seasons .grid > div');
+    seasonCards.forEach((card, i) => {
+      card.style.cssText += `opacity:0;transform:translateY(40px);transition:opacity 1s ${i * 180}ms ease,transform 1.1s ${i * 180}ms cubic-bezier(0.2,0.8,0.2,1);`;
     });
-  }
-  window.addEventListener('scroll', updateDrift, { passive: true });
-  updateDrift();
+    const seasonsObs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        seasonCards.forEach(c => { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; });
+        seasonsObs.disconnect();
+      }
+    }, { threshold: 0.15 });
+    const seasonsGrid = document.querySelector('#seasons .grid');
+    if (seasonsGrid) seasonsObs.observe(seasonsGrid);
 
-  /* ── Mobile Navigation Toggle ── */
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-
-  function toggleMobileMenu() {
-    const isOpen = mobileMenuOverlay.classList.contains('translate-x-0');
-    if (isOpen) {
-      mobileMenuOverlay.classList.remove('translate-x-0');
-      mobileMenuOverlay.classList.add('translate-x-full');
-      mobileMenuBtn.classList.remove('menu-open');
-      document.body.classList.remove('mobile-nav-active');
-    } else {
-      mobileMenuOverlay.classList.remove('translate-x-full');
-      mobileMenuOverlay.classList.add('translate-x-0');
-      mobileMenuBtn.classList.add('menu-open');
-      document.body.classList.add('mobile-nav-active');
+    /* ── Horizontal text drift on section headings ── */
+    const driftHeadings = document.querySelectorAll('h2.editorial-headline');
+    function updateDrift() {
+      driftHeadings.forEach(h => {
+        const rect = h.getBoundingClientRect();
+        const rel = (rect.top + rect.height / 2) / window.innerHeight - 0.5;
+        const drift = rel * -18;
+        h.style.transform = `translate3d(${drift}px, 0, 0)`;
+      });
     }
-  }
-  if (mobileMenuBtn && mobileMenuOverlay) {
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-  }
+    window.addEventListener('scroll', updateDrift, { passive: true });
+    updateDrift();
 
-  /* ── Contact questionnaire ── */
-  const cAnswers = {};
+    /* ── Mobile Navigation Toggle ── */
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
-  function cNext(step, key, value) {
-    cAnswers[key] = value;
-    if (key === 'type') document.getElementById('form-type').value = value;
-    if (key === 'days') document.getElementById('form-days').value = value;
-    if (key === 'interest') document.getElementById('form-interest').value = value;
-
-    document.getElementById('q-' + step).classList.add('hidden');
-    const next = document.getElementById('q-' + (step + 1));
-    if (next) {
-      next.classList.remove('hidden');
-    } else {
-      document.getElementById('q-summary').innerHTML =
-        `We have a sense of you already — a <em style="font-style:italic">${cAnswers.type?.toLowerCase()}</em>` +
-        ` with <em style="font-style:italic">${cAnswers.days}</em> days, drawn to` +
-        ` <em style="font-style:italic">${cAnswers.interest?.toLowerCase()}</em>.`;
-      document.getElementById('q-done').classList.remove('hidden');
+    function toggleMobileMenu() {
+      const isOpen = mobileMenuOverlay.classList.contains('translate-x-0');
+      if (isOpen) {
+        mobileMenuOverlay.classList.remove('translate-x-0');
+        mobileMenuOverlay.classList.add('translate-x-full');
+        mobileMenuBtn.classList.remove('menu-open');
+        document.body.classList.remove('mobile-nav-active');
+      } else {
+        mobileMenuOverlay.classList.remove('translate-x-full');
+        mobileMenuOverlay.classList.add('translate-x-0');
+        mobileMenuBtn.classList.add('menu-open');
+        document.body.classList.add('mobile-nav-active');
+      }
     }
-  }
+    if (mobileMenuBtn && mobileMenuOverlay) {
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
 
-  function cReset() {
-    ['q-0','q-1','q-2','q-done'].forEach((id, i) => {
-      document.getElementById(id).classList.toggle('hidden', i !== 0);
-    });
-    Object.keys(cAnswers).forEach(k => delete cAnswers[k]);
-  }
+    /* ── Contact questionnaire ── */
+    const cAnswers = {};
 
-  /* ── AJAX Form Submission Handler (Formspree) ── */
-  const homeForm = document.getElementById('home-contact-form');
-  if (homeForm) {
-    homeForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const button = form.querySelector('button');
-      const origText = button.innerHTML;
-      button.disabled = true;
-      button.innerHTML = 'Sending...';
+    function cNext(step, key, value) {
+      cAnswers[key] = value;
+      if (key === 'type') document.getElementById('form-type').value = value;
+      if (key === 'days') document.getElementById('form-days').value = value;
+      if (key === 'interest') document.getElementById('form-interest').value = value;
 
-      // Submit to Formspree endpoint (Formspree placeholder, easy to customize)
-      const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
-      
-      fetch(formspreeEndpoint, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        button.innerHTML = 'Sent Successfully';
-        button.classList.add('bg-brass', 'text-night');
-        form.innerHTML = `
+      document.getElementById('q-' + step).classList.add('hidden');
+      const next = document.getElementById('q-' + (step + 1));
+      if (next) {
+        next.classList.remove('hidden');
+      } else {
+        document.getElementById('q-summary').innerHTML =
+          `We have a sense of you already — a <em style="font-style:italic">${cAnswers.type?.toLowerCase()}</em>` +
+          ` with <em style="font-style:italic">${cAnswers.days}</em> days, drawn to` +
+          ` <em style="font-style:italic">${cAnswers.interest?.toLowerCase()}</em>.`;
+        document.getElementById('q-done').classList.remove('hidden');
+      }
+    }
+
+    function cReset() {
+      ['q-0', 'q-1', 'q-2', 'q-done'].forEach((id, i) => {
+        document.getElementById(id).classList.toggle('hidden', i !== 0);
+      });
+      Object.keys(cAnswers).forEach(k => delete cAnswers[k]);
+    }
+
+    /* ── AJAX Form Submission Handler (Formspree) ── */
+    const homeForm = document.getElementById('home-contact-form');
+    if (homeForm) {
+      homeForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        const button = form.querySelector('button');
+        const origText = button.innerHTML;
+        button.disabled = true;
+        button.innerHTML = 'Sending...';
+
+        // Submit to Formspree endpoint (Formspree placeholder, easy to customize)
+        const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
+
+        fetch(formspreeEndpoint, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(response => {
+            button.innerHTML = 'Sent Successfully';
+            button.classList.add('bg-brass', 'text-night');
+            form.innerHTML = `
           <div class="col-span-2 py-8 text-brass reveal is-visible">
             <h4 class="font-display text-2xl mb-2">Thank you, ${data.get('name') || 'wanderer'}.</h4>
             <p class="font-display italic text-paper/85 text-lg">Your answers have been sent. We will write back to <strong>${data.get('email')}</strong> within 24 hours.</p>
           </div>`;
-      })
-      .catch(err => {
-        console.warn('Formspree submit failed, running mock-success for demo:', err);
-        button.innerHTML = 'Sent Successfully';
-        button.classList.add('bg-brass', 'text-night');
-        form.innerHTML = `
+          })
+          .catch(err => {
+            console.warn('Formspree submit failed, running mock-success for demo:', err);
+            button.innerHTML = 'Sent Successfully';
+            button.classList.add('bg-brass', 'text-night');
+            form.innerHTML = `
           <div class="col-span-2 py-8 text-brass reveal is-visible">
             <h4 class="font-display text-2xl mb-2">Thank you, ${data.get('name') || 'wanderer'}.</h4>
             <p class="font-display italic text-paper/85 text-lg">Your answers have been sent. We will write back to <strong>${data.get('email')}</strong> within 24 hours.</p>
           </div>`;
+          });
       });
-    });
-  }
-</script>
+    }
+  </script>
 
 </body>
+
 </html>
