@@ -250,61 +250,6 @@
     mBtn.addEventListener('click', toggleMobileMenu);
   }
 
-  /* ── AJAX Form Submission Handler (Formspree) ── */
-  const contactForm = document.getElementById('detailed-planner-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const button = form.querySelector('button');
-      button.disabled = true;
-      button.innerHTML = 'Sending Plan...';
-
-      // Submit to Formspree
-      const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
-      
-      // Serialize checkbox groups
-      const checkedInterests = [];
-      form.querySelectorAll('input[name="interests"]:checked').forEach(cb => {
-        checkedInterests.push(cb.value);
-      });
-      data.set('interests', checkedInterests.join(', '));
-
-      fetch(formspreeEndpoint, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        button.innerHTML = 'Plan Sent';
-        form.innerHTML = `
-          <div class="py-8 text-moss-deep reveal is-visible space-y-4">
-            <h4 class="font-display text-3xl">Thank you, ${data.get('name') || 'wanderer'}.</h4>
-            <p class="font-display italic text-ink/80 text-xl leading-relaxed">
-              We have received your slow journey planner. Our lead curator, George, will review your preferences and email a hand-sketched outline route to <strong>${data.get('email')}</strong> within 24 hours.
-            </p>
-            <div class="pt-6">
-              <a href="index.html" class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">← Back to home</a>
-            </div>
-          </div>`;
-      })
-      .catch(err => {
-        console.warn('Formspree submit failed, running mock-success for demo:', err);
-        button.innerHTML = 'Plan Sent';
-        form.innerHTML = `
-          <div class="py-8 text-moss-deep reveal is-visible space-y-4">
-            <h4 class="font-display text-3xl">Thank you, ${data.get('name') || 'wanderer'}.</h4>
-            <p class="font-display italic text-ink/80 text-xl leading-relaxed">
-              We have received your slow journey planner. Our lead curator, George, will review your preferences and email a hand-sketched outline route to <strong>${data.get('email')}</strong> within 24 hours.
-            </p>
-            <div class="pt-6">
-              <a href="index.html" class="small-caps border-b border-ink/40 pb-1 hover:border-brass hover:text-brass transition-colors">← Back to home</a>
-            </div>
-          </div>`;
-      });
-    });
-  }
 </script>
 <script src="site-features.js"></script>
 </body>

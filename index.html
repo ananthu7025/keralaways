@@ -1218,47 +1218,6 @@
       Object.keys(cAnswers).forEach(k => delete cAnswers[k]);
     }
 
-    /* ── AJAX Form Submission Handler (Formspree) ── */
-    const homeForm = document.getElementById('home-contact-form');
-    if (homeForm) {
-      homeForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const form = e.target;
-        const data = new FormData(form);
-        const button = form.querySelector('button');
-        const origText = button.innerHTML;
-        button.disabled = true;
-        button.innerHTML = 'Sending...';
-
-        // Submit to Formspree endpoint (Formspree placeholder, easy to customize)
-        const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
-
-        fetch(formspreeEndpoint, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        })
-          .then(response => {
-            button.innerHTML = 'Sent Successfully';
-            button.classList.add('bg-brass', 'text-night');
-            form.innerHTML = `
-          <div class="col-span-2 py-8 text-brass reveal is-visible">
-            <h4 class="font-display text-2xl mb-2">Thank you, ${data.get('name') || 'wanderer'}.</h4>
-            <p class="font-display italic text-paper/85 text-lg">Your answers have been sent. We will write back to <strong>${data.get('email')}</strong> within 24 hours.</p>
-          </div>`;
-          })
-          .catch(err => {
-            console.warn('Formspree submit failed, running mock-success for demo:', err);
-            button.innerHTML = 'Sent Successfully';
-            button.classList.add('bg-brass', 'text-night');
-            form.innerHTML = `
-          <div class="col-span-2 py-8 text-brass reveal is-visible">
-            <h4 class="font-display text-2xl mb-2">Thank you, ${data.get('name') || 'wanderer'}.</h4>
-            <p class="font-display italic text-paper/85 text-lg">Your answers have been sent. We will write back to <strong>${data.get('email')}</strong> within 24 hours.</p>
-          </div>`;
-          });
-      });
-    }
   </script>
 
 <script src="site-features.js"></script>

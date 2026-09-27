@@ -1,11 +1,27 @@
 /**
  * Keralaway Tours — Global Site Features
- * 
+ *
  * Handles:
  * 1. WhatsApp Share Link Integration (wa.me)
  * 2. Free Live Chat Widget (Tawk.to) Setup with Premium Fallback Widget
- * 3. Email Enquiry Form Handling + Notification Modals
+ * 3. Email Enquiry Form Handling + Notification Modals (via EmailJS)
  */
+
+// ── EMAILJS CONFIG ──
+const EMAILJS_PUBLIC_KEY = "jThLfDNV_dsYEfnVv";
+const EMAILJS_SERVICE_ID = "service_gkzzws8";
+const EMAILJS_TEMPLATE_ID = "template_nv79epn";
+
+const emailjsReady = new Promise((resolve, reject) => {
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+  script.onload = () => {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    resolve();
+  };
+  script.onerror = () => reject(new Error("Failed to load EmailJS SDK"));
+  document.head.appendChild(script);
+});
 
 // ── 1. WHATSAPP SHARE INTEGRATION ──
 function shareCurrentPageOnWhatsApp() {
@@ -279,23 +295,16 @@ function bindFormSubmit(formId) {
     });
 
     try {
-      // Post to Web3Forms (A free static form handler)
-      // Web3forms allows submitting forms to email without a backend.
-      // TO ACTIVATE: Replace 'YOUR_ACCESS_KEY' in the hidden input or formObject with your real Web3Forms Access Key.
-      const accessKey = "YOUR_ACCESS_KEY"; 
-      
-      // We will perform a simulated 1.2s delay to maintain high-end UX feel
-      await new Promise(resolve => setTimeout(resolve, 1200));
-
-      console.log("Enquiry payload prepared:", formObject);
+      await emailjsReady;
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formObject);
 
       // Hide loading, show success
       loadingModal.classList.add("hidden");
       document.getElementById("kw-success-modal").classList.remove("hidden");
-      
+
       // Reset form fields
       formElement.reset();
-      
+
       // If it was the home question page, we want to reset the questions view
       if (typeof cReset === 'function') {
         cReset();
