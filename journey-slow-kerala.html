@@ -412,41 +412,6 @@
   const firstItem = document.querySelector('.accordion-item');
   if (firstItem) firstItem.classList.add('accordion-open');
 
-  /* ── Formspree Submit ── */
-  const inquiryForm = document.getElementById('journey-inquiry-form');
-  if (inquiryForm) {
-    inquiryForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const button = form.querySelector('button');
-      button.disabled = true;
-      button.innerHTML = 'Sending Inquiry...';
-
-      const formspreeEndpoint = 'https://formspree.io/f/mnqeoloz';
-      fetch(formspreeEndpoint, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        button.innerHTML = 'Inquiry Sent';
-        form.innerHTML = `
-          <div class="py-6 text-brass text-center">
-            <h4 class="font-display text-2xl mb-2">Request Received.</h4>
-            <p class="font-display italic text-paper/85 text-lg">We have recorded your interest in the ${data.get('journey_name')} journey. Our curators will write back to you shortly.</p>
-          </div>`;
-      })
-      .catch(err => {
-        button.innerHTML = 'Inquiry Sent';
-        form.innerHTML = `
-          <div class="py-6 text-brass text-center">
-            <h4 class="font-display text-2xl mb-2">Request Received.</h4>
-            <p class="font-display italic text-paper/85 text-lg">We have recorded your interest in the ${data.get('journey_name')} journey. Our curators will write back to you shortly.</p>
-          </div>`;
-      });
-    });
-  }
 </script>
 <script src="site-features.js"></script>
 </body>
