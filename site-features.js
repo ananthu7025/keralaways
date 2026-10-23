@@ -170,8 +170,10 @@ async function handleChatbotSubmit(e) {
   let replyText = "";
   const query = userText.toLowerCase();
 
-  if (query.includes("romantic") || query.includes("couple") || query.includes("honeymoon")) {
-    replyText = "Our 'Romantic Escapes' chapter offers custom bookings in boutique heritage hotels and high-altitude mountain retreats, ending with a private lake cruise.";
+  if (query.includes("dubai") || query.includes("uae") || query.includes("emirates") || query.includes("burj")) {
+    replyText = "We offer a 3 Nights / 4 Days Private Dubai Tour Package with Ibis Styles 3-star stay, daily breakfast, 30-day tourist visa, private transfers, Dhow cruise dinner, desert safari with BBQ, city tour, and Miracle Garden starting at ₹34,500/person.";
+  } else if (query.includes("romantic") || query.includes("couple") || query.includes("honeymoon")) {
+    replyText = "Our 'Romantic Escapes' chapter is a 5-day private journey for couples featuring 4-star heritage & mountain stays, Anakulam jeep safari, sunset cruise, and candlelit lakeside dining for ₹1,00,000 INR ($1,050 USD).";
   } else if (query.includes("cost") || query.includes("price") || query.includes("budget") || query.includes("expensive")) {
     replyText = "We configure each trip around three curated tiers: Essential ($1,650/person), Curated ($2,250/person), or Planter's Sanctuary Bespoke ($3,800/person).";
   } else if (query.includes("wellness") || query.includes("ayurveda") || query.includes("heal")) {
